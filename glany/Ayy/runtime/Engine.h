@@ -1,10 +1,10 @@
+#pragma once
+
 #include "platform/Window.h"
 
 namespace ayy
 {
 	class Renderer;
-	class Logger;
-
 	class Engine
 	{
 	public:
@@ -18,15 +18,9 @@ namespace ayy
 		void Run();
 		void Deinitialize();
 
-
-	public:
-		Logger* GetLogger() { return _logger; }
-
 	protected:
 		static Engine* s_instance;
-
-
-		Logger* _logger = nullptr;
+		
 		Window* _window = nullptr;
 		Renderer* _renderer = nullptr;
 

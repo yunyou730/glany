@@ -1,13 +1,22 @@
 #include "Logger.h"
-//#include <cstdio>
-//#include <cstdarg>
-
 #include <iostream>
+
+#include "core/util_func.h"
 
 namespace ayy
 {
-	void Logger::Print(LogLevel level, const char* msg)
+	void Logger::Info(const std::string& msg)
 	{
-		std::cout << msg << std::endl;
+		LogWithLevel(LogLevel::Info, msg);
+	}
+
+	void Logger::Warning(const std::string& msg)
+	{
+		LogWithLevel(LogLevel::Warning, msg);
+	}
+
+	void Logger::Error(const std::string& msg)
+	{
+		LogWithLevel(LogLevel::Error, msg);
 	}
 }

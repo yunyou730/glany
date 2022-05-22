@@ -1,8 +1,7 @@
 #include "GLWindow.h"
 
-#include "runtime/Engine.h"
+#include "core/util_func.h"
 #include "function/log/Logger.h"
-
 
 namespace ayy
 {
@@ -12,7 +11,7 @@ namespace ayy
 	
 	}
 
-	GLWindow::~GLWindow() 
+	GLWindow::~GLWindow()
 	{
 	
 	}
@@ -30,7 +29,7 @@ namespace ayy
 		_glfwWindow = glfwCreateWindow(windowCreateParam.size.x, windowCreateParam.size.y, windowCreateParam.caption.c_str(), NULL, NULL);
 		if (_glfwWindow == NULL)
 		{
-			Engine::Instance()->GetLogger()->Print(LogLevel::Error, "Failed to create GLFW window");
+			Logger::Error("Failed to create GLFW window");
 			glfwTerminate();
 
 			return false;
@@ -40,17 +39,18 @@ namespace ayy
 
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 		{
-			Engine::Instance()->GetLogger()->Print(LogLevel::Error, "Failed to initialize GLAD");
+			Logger::Error("Failed to create GLFW window");
 			return false;
 		}
 
-
+		Logger::Info("GLWindow::Initialize Success");
 		return true;
 	}
 
 	void GLWindow::Deinitialize()
 	{
 		glfwTerminate();
+		Logger::Info("GLWindow::Deinitialize");
 	}
 	
 

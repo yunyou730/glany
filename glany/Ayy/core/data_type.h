@@ -12,3 +12,12 @@ namespace ayy
 	using Dimension2i = glm::ivec2;
 	using Dimension2f = glm::vec2;
 }
+
+
+enum class LogLevel
+{
+	Info,
+	Warning,
+	Error,
+};
+

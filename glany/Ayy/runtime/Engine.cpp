@@ -4,8 +4,6 @@
 
 #include "core/util_func.h"
 
-#include "function/log/Logger.h"
-
 #include <cassert>
 
 namespace ayy
@@ -17,15 +15,13 @@ namespace ayy
 	{
 		assert(s_instance == nullptr);
 		s_instance = this;
-
-		_logger = new Logger();
+	
 		_window = new GLWindow();
 	}
 	
 	Engine::~Engine()
 	{
 		SAFE_DEL(_window);
-		SAFE_DEL(_logger);
 
 		s_instance = nullptr;
 	}

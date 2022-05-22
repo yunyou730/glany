@@ -9,10 +9,8 @@ int main()
 	//ayy::WindowTest();
 	printf("00.Testbed\n");
 
-	auto windowCreate = ayy::WindowCreateParam(400,300,"00.Testbed");
-
 	auto engine = ayy::Engine();
-	engine.Initialize(windowCreate);
+	engine.Initialize(ayy::WindowCreateParam(800, 600, "00.Testbed"));
 	engine.Run();
 	engine.Deinitialize();
 	
