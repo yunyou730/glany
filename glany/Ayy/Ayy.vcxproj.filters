@@ -33,6 +33,9 @@
     <ClInclude Include="include\Engine.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="platform\Window.h">
+      <Filter>platform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\Application.cpp">
@@ -43,6 +46,9 @@
     </ClCompile>
     <ClCompile Include="test\ayy.cpp">
       <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="platform\Window.cpp">
+      <Filter>platform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

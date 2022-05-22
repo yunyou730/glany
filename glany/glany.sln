@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ayy", "Ayy\Ayy.vcxproj", "{A17CD88B-2598-40C5-A6FD-0D9B1ED69F4D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{49698A0C-0066-43B1-B603-380F83E141F3} = {49698A0C-0066-43B1-B603-380F83E141F3}
+		{EC1F6FC9-D8C6-4041-9EBE-67A5C952120F} = {EC1F6FC9-D8C6-4041-9EBE-67A5C952120F}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "00.Testbed", "00.Testbed\00.Testbed.vcxproj", "{4E47A41D-ACD4-4728-8929-ACA7A904E69D}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -18,6 +22,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThirdParty", "ThirdParty", "{450AA99F-9326-4265-85AB-5519AC50A21E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Glad", "Glad\Glad.vcxproj", "{EC1F6FC9-D8C6-4041-9EBE-67A5C952120F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glm", "glm\glm.vcxproj", "{49698A0C-0066-43B1-B603-380F83E141F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,14 @@ Global
 		{EC1F6FC9-D8C6-4041-9EBE-67A5C952120F}.Release|x64.Build.0 = Release|x64
 		{EC1F6FC9-D8C6-4041-9EBE-67A5C952120F}.Release|x86.ActiveCfg = Release|Win32
 		{EC1F6FC9-D8C6-4041-9EBE-67A5C952120F}.Release|x86.Build.0 = Release|Win32
+		{49698A0C-0066-43B1-B603-380F83E141F3}.Debug|x64.ActiveCfg = Debug|x64
+		{49698A0C-0066-43B1-B603-380F83E141F3}.Debug|x64.Build.0 = Debug|x64
+		{49698A0C-0066-43B1-B603-380F83E141F3}.Debug|x86.ActiveCfg = Debug|Win32
+		{49698A0C-0066-43B1-B603-380F83E141F3}.Debug|x86.Build.0 = Debug|Win32
+		{49698A0C-0066-43B1-B603-380F83E141F3}.Release|x64.ActiveCfg = Release|x64
+		{49698A0C-0066-43B1-B603-380F83E141F3}.Release|x64.Build.0 = Release|x64
+		{49698A0C-0066-43B1-B603-380F83E141F3}.Release|x86.ActiveCfg = Release|Win32
+		{49698A0C-0066-43B1-B603-380F83E141F3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +73,7 @@ Global
 		{A17CD88B-2598-40C5-A6FD-0D9B1ED69F4D} = {C88EA835-353E-4B4D-B0F8-4E5B3F01F897}
 		{4E47A41D-ACD4-4728-8929-ACA7A904E69D} = {B4481FDE-2F83-428B-9CE4-F31675545C2B}
 		{EC1F6FC9-D8C6-4041-9EBE-67A5C952120F} = {450AA99F-9326-4265-85AB-5519AC50A21E}
+		{49698A0C-0066-43B1-B603-380F83E141F3} = {450AA99F-9326-4265-85AB-5519AC50A21E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1888772B-CF8C-4799-B973-F1189CFE762B}
