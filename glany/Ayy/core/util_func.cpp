@@ -3,5 +3,18 @@
 
 void LogWithLevel(LogLevel logLevel, const std::string& msg)
 {
-	std::cout << msg << std::endl;
+	std::string logTag = "[log]";
+	switch (logLevel)
+	{
+	case LogLevel::Info:
+		logTag = "[info]";
+		break;
+	case LogLevel::Warning:
+		logTag = "[warn]";
+		break;
+	case LogLevel::Error:
+		logTag = "[error]";
+		break;
+	}
+	std::cout << logTag << msg << std::endl;
 }
