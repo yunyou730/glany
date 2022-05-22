@@ -1,19 +1,18 @@
 #include <cstdio>
 
-#include "ayy.h"
-#include "Engine.h"
+#include "runtime/ayy.h"
+#include "runtime/Engine.h"
 
 int main()
 {
-	ayy::MathTest(3.0,glm::vec2(1.0,3.0));
-
-	//void MathTest(float Translate, glm::vec2 const& Rotate)
-
-	ayy::WindowTest();
+	//ayy::MathTest(3.0,glm::vec2(1.0,3.0));
+	//ayy::WindowTest();
 	printf("00.Testbed\n");
 
+	auto windowCreate = ayy::WindowCreateParam(400,300,"00.Testbed");
+
 	auto engine = ayy::Engine();
-	engine.Initialize();
+	engine.Initialize(windowCreate);
 	engine.Run();
 	engine.Deinitialize();
 	

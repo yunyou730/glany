@@ -19,16 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="engine\Application.cpp" />
-    <ClCompile Include="engine\Engine.cpp" />
+    <ClCompile Include="core\data_type.cpp" />
+    <ClCompile Include="core\util_func.cpp" />
+    <ClCompile Include="function\log\Logger.cpp" />
+    <ClCompile Include="function\render\Renderer.cpp" />
+    <ClCompile Include="platform\GLWindow.cpp" />
     <ClCompile Include="platform\Window.cpp" />
+    <ClCompile Include="runtime\Application.cpp" />
+    <ClCompile Include="runtime\Engine.cpp" />
     <ClCompile Include="test\ayy.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Application.h" />
-    <ClInclude Include="include\ayy.h" />
-    <ClInclude Include="include\Engine.h" />
+    <ClInclude Include="core\data_type.h" />
+    <ClInclude Include="core\util_func.h" />
+    <ClInclude Include="function\log\Logger.h" />
+    <ClInclude Include="function\render\Renderer.h" />
+    <ClInclude Include="platform\GLWindow.h" />
     <ClInclude Include="platform\Window.h" />
+    <ClInclude Include="runtime\Application.h" />
+    <ClInclude Include="runtime\ayy.h" />
+    <ClInclude Include="runtime\Engine.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -138,7 +148,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\glm-0.9.9.8;$(SolutionDir)ThirdParty\glad-gl4.6\include;$(SolutionDir)ThirdParty\glfw-3.3.7\include\;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\glm-0.9.9.8;$(SolutionDir)ThirdParty\glad-gl4.6\include;$(SolutionDir)ThirdParty\glfw-3.3.7\include\;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalModuleDependencies>%(AdditionalModuleDependencies)</AdditionalModuleDependencies>
     </ClCompile>
     <Link>
@@ -157,7 +167,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\glm-0.9.9.8;$(SolutionDir)ThirdParty\glad-gl4.6\include;$(SolutionDir)ThirdParty\glfw-3.3.7\include\;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\glm-0.9.9.8;$(SolutionDir)ThirdParty\glad-gl4.6\include;$(SolutionDir)ThirdParty\glfw-3.3.7\include\;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalModuleDependencies>%(AdditionalModuleDependencies)</AdditionalModuleDependencies>
     </ClCompile>
     <Link>

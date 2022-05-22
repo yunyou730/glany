@@ -1,4 +1,4 @@
-#include "../include/ayy.h"
+#include "runtime/ayy.h"
 #include <iostream>
 
 #include "glad/glad.h"
@@ -10,7 +10,7 @@ void WindowTest()
 {
 	std::cout << "ayy:TestFunc3" << std::endl;
 
-	glfwCreateWindow(100, 100, "", nullptr, nullptr);
+	//glfwCreateWindow(100, 100, "", nullptr, nullptr);
 	std::cout << "ayy:TestFunc5" << std::endl;
 
 
