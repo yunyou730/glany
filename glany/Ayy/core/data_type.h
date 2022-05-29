@@ -1,18 +1,16 @@
 #pragma once
 
 #include <glm/glm.hpp>
+//#include "core/util_func.h"
 
 namespace ayy
 {
-	//typedef glm::ivec2 Dimension2i;
-	//typedef glm::vec2 Dimension2f;
-	//typedef glm::ivec3 Dimension3i;
-	//typedef glm::vec3 Dimension3f;
-
 	using Dimension2i = glm::ivec2;
 	using Dimension2f = glm::vec2;
-}
 
+	using Color4f = glm::vec4;
+	using Color3f = glm::vec3;
+}
 
 enum class LogLevel
 {
@@ -20,4 +18,5 @@ enum class LogLevel
 	Warning,
 	Error,
 };
+
 

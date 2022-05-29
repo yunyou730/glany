@@ -22,23 +22,47 @@
     <ClCompile Include="core\data_type.cpp" />
     <ClCompile Include="core\util_func.cpp" />
     <ClCompile Include="function\log\Logger.cpp" />
-    <ClCompile Include="function\render\Renderer.cpp" />
-    <ClCompile Include="platform\GLWindow.cpp" />
-    <ClCompile Include="platform\Window.cpp" />
+    <ClCompile Include="function\render\RenderCommand.cpp" />
+    <ClCompile Include="function\render\RenderPipeline.cpp" />
+    <ClCompile Include="function\render\RenderState.cpp" />
+    <ClCompile Include="function\render\RenderSystem.cpp" />
+    <ClCompile Include="function\render\rhi\gl\GLRhi.cpp" />
+    <ClCompile Include="function\render\rhi\rhi.cpp" />
+    <ClCompile Include="function\render\rhi\rhi_data_type.cpp" />
+    <ClCompile Include="function\scene_management\component\BaseComponent.cpp" />
+    <ClCompile Include="function\scene_management\component\MeshRenderComponent.cpp" />
+    <ClCompile Include="function\scene_management\component\TransformComponent.cpp" />
+    <ClCompile Include="function\scene_management\entity\Entity.cpp" />
+    <ClCompile Include="function\scene_management\Scene.cpp" />
+    <ClCompile Include="function\window\GLWindow.cpp" />
+    <ClCompile Include="function\window\Window.cpp" />
     <ClCompile Include="runtime\Application.cpp" />
     <ClCompile Include="runtime\Engine.cpp" />
+    <ClCompile Include="runtime\EngineLaunchParam.cpp" />
     <ClCompile Include="test\ayy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\data_type.h" />
     <ClInclude Include="core\util_func.h" />
     <ClInclude Include="function\log\Logger.h" />
-    <ClInclude Include="function\render\Renderer.h" />
-    <ClInclude Include="platform\GLWindow.h" />
-    <ClInclude Include="platform\Window.h" />
+    <ClInclude Include="function\render\RenderCommand.h" />
+    <ClInclude Include="function\render\RenderPipeline.h" />
+    <ClInclude Include="function\render\RenderState.h" />
+    <ClInclude Include="function\render\RenderSystem.h" />
+    <ClInclude Include="function\render\rhi\gl\GLRhi.h" />
+    <ClInclude Include="function\render\rhi\rhi.h" />
+    <ClInclude Include="function\render\rhi\rhi_data_type.h" />
+    <ClInclude Include="function\scene_management\component\BaseComponent.h" />
+    <ClInclude Include="function\scene_management\component\MeshRenderComponenent.h" />
+    <ClInclude Include="function\scene_management\component\TransformComponent.h" />
+    <ClInclude Include="function\scene_management\entity\Entity.h" />
+    <ClInclude Include="function\scene_management\Scene.h" />
+    <ClInclude Include="function\window\GLWindow.h" />
+    <ClInclude Include="function\window\Window.h" />
     <ClInclude Include="runtime\Application.h" />
     <ClInclude Include="runtime\ayy.h" />
     <ClInclude Include="runtime\Engine.h" />
+    <ClInclude Include="runtime\EngineLaunchParam.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
