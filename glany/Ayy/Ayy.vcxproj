@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="core\data_type.cpp" />
     <ClCompile Include="core\util_func.cpp" />
+    <ClCompile Include="function\io\FileReader.cpp" />
     <ClCompile Include="function\log\Logger.cpp" />
     <ClCompile Include="function\render\RenderCommand.cpp" />
     <ClCompile Include="function\render\RenderPipeline.cpp" />
@@ -36,6 +37,12 @@
     <ClCompile Include="function\scene_management\Scene.cpp" />
     <ClCompile Include="function\window\GLWindow.cpp" />
     <ClCompile Include="function\window\Window.cpp" />
+    <ClCompile Include="resource\mesh\MeshItem.cpp" />
+    <ClCompile Include="resource\mesh\MeshManager.cpp" />
+    <ClCompile Include="resource\mesh\MeshProductor.cpp" />
+    <ClCompile Include="resource\shader\ShaderManager.cpp" />
+    <ClCompile Include="resource\shader\ShaderProgram.cpp" />
+    <ClCompile Include="resource\texture\TextureManager.cpp" />
     <ClCompile Include="runtime\Application.cpp" />
     <ClCompile Include="runtime\Engine.cpp" />
     <ClCompile Include="runtime\EngineLaunchParam.cpp" />
@@ -44,6 +51,7 @@
   <ItemGroup>
     <ClInclude Include="core\data_type.h" />
     <ClInclude Include="core\util_func.h" />
+    <ClInclude Include="function\io\FileReader.h" />
     <ClInclude Include="function\log\Logger.h" />
     <ClInclude Include="function\render\RenderCommand.h" />
     <ClInclude Include="function\render\RenderPipeline.h" />
@@ -53,12 +61,18 @@
     <ClInclude Include="function\render\rhi\rhi.h" />
     <ClInclude Include="function\render\rhi\rhi_data_type.h" />
     <ClInclude Include="function\scene_management\component\BaseComponent.h" />
-    <ClInclude Include="function\scene_management\component\MeshRenderComponenent.h" />
+    <ClInclude Include="function\scene_management\component\MeshRenderComponent.h" />
     <ClInclude Include="function\scene_management\component\TransformComponent.h" />
     <ClInclude Include="function\scene_management\entity\Entity.h" />
     <ClInclude Include="function\scene_management\Scene.h" />
     <ClInclude Include="function\window\GLWindow.h" />
     <ClInclude Include="function\window\Window.h" />
+    <ClInclude Include="resource\mesh\MeshItem.h" />
+    <ClInclude Include="resource\mesh\MeshManager.h" />
+    <ClInclude Include="resource\mesh\MeshProductor.h" />
+    <ClInclude Include="resource\shader\ShaderManager.h" />
+    <ClInclude Include="resource\shader\ShaderProgram.h" />
+    <ClInclude Include="resource\texture\TextureManager.h" />
     <ClInclude Include="runtime\Application.h" />
     <ClInclude Include="runtime\ayy.h" />
     <ClInclude Include="runtime\Engine.h" />

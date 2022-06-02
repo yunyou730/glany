@@ -16,8 +16,14 @@ public:
 	~Entity();
 
 	EntityID GetID() const { return _entityId; }
-
-	void AddComponent(const std::string& clsName,BaseComponent* component);
+	
+	template<typename CompCls>
+	CompCls* AddComponent()
+	{
+		auto comp = new CompCls(this);
+		_componentMap.insert(std::make_pair(CompCls::ClsName(), comp));
+		return comp;
+	}
 
 protected:
 	EntityID  _entityId = 0;

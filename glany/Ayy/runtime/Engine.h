@@ -9,6 +9,9 @@
 namespace ayy
 {
 	class RenderSystem;
+	class MeshManager;
+	class ShaderManager;
+	class TextureManager;
 	class Engine
 	{
 	public:
@@ -25,6 +28,11 @@ namespace ayy
 	public:
 		Scene* GetScene() { return _scene; }
 
+	public:
+		MeshManager* GetMeshManager() { return _meshManager; }
+		ShaderManager* GetShaderManager() { return _shaderManager; }
+		TextureManager* GetTextureManager() { return _textureManager; }
+
 	protected:
 		void TickLogic();
 		void TickRender();
@@ -37,8 +45,15 @@ namespace ayy
 		Window*		_window			= nullptr;
 		Scene*		_scene			= nullptr;
 
+	protected:
 		RenderSystem* _renderSystem = nullptr;
+
+	protected:
+		MeshManager* _meshManager = nullptr;
+		ShaderManager* _shaderManager = nullptr;
+		TextureManager* _textureManager = nullptr;
 	
+	protected:
 		float	_lastFrameTimeStamp = 0.f;
 		float	_deltaTime = 0.f;
 	};

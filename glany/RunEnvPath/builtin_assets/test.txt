@@ -43,17 +43,8 @@
     <Filter Include="function\scene_management\component">
       <UniqueIdentifier>{c297138f-595b-466e-a7af-efd2ee8dc6a3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="function\io">
+    <Filter Include="io">
       <UniqueIdentifier>{3566ecdc-ab71-4667-87ee-6825bbb51f55}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="resource\mesh">
-      <UniqueIdentifier>{d830ce3b-7b7d-4282-871b-1ca27c304779}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="resource\shader">
-      <UniqueIdentifier>{54eed16b-efb8-42c6-86d2-7c7ddc70e965}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="resource\texture">
-      <UniqueIdentifier>{d35d1a0e-4140-46b4-b826-0f68a43c48d7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -120,26 +111,20 @@
     <ClInclude Include="function\scene_management\component\TransformComponent.h">
       <Filter>function\scene_management\component</Filter>
     </ClInclude>
-    <ClInclude Include="function\io\FileReader.h">
-      <Filter>function\io</Filter>
+    <ClInclude Include="resource\MeshManager.h">
+      <Filter>resource</Filter>
     </ClInclude>
-    <ClInclude Include="resource\mesh\MeshProductor.h">
-      <Filter>resource\mesh</Filter>
+    <ClInclude Include="resource\TextureManager.h">
+      <Filter>resource</Filter>
     </ClInclude>
-    <ClInclude Include="resource\mesh\MeshManager.h">
-      <Filter>resource\mesh</Filter>
+    <ClInclude Include="resource\MeshProductor.h">
+      <Filter>resource</Filter>
     </ClInclude>
-    <ClInclude Include="resource\texture\TextureManager.h">
-      <Filter>resource\texture</Filter>
+    <ClInclude Include="resource\ShaderMananger.h">
+      <Filter>resource</Filter>
     </ClInclude>
-    <ClInclude Include="resource\shader\ShaderManager.h">
-      <Filter>resource\shader</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\mesh\MeshItem.h">
-      <Filter>resource\mesh</Filter>
-    </ClInclude>
-    <ClInclude Include="resource\shader\ShaderProgram.h">
-      <Filter>resource\shader</Filter>
+    <ClInclude Include="io\FileReader.h">
+      <Filter>io</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -206,26 +191,20 @@
     <ClCompile Include="function\scene_management\component\BaseComponent.cpp">
       <Filter>function\scene_management\component</Filter>
     </ClCompile>
-    <ClCompile Include="function\io\FileReader.cpp">
-      <Filter>function\io</Filter>
+    <ClCompile Include="resource\MeshManager.cpp">
+      <Filter>resource</Filter>
     </ClCompile>
-    <ClCompile Include="resource\mesh\MeshProductor.cpp">
-      <Filter>resource\mesh</Filter>
+    <ClCompile Include="resource\TextureManager.cpp">
+      <Filter>resource</Filter>
     </ClCompile>
-    <ClCompile Include="resource\mesh\MeshManager.cpp">
-      <Filter>resource\mesh</Filter>
+    <ClCompile Include="resource\MeshProductor.cpp">
+      <Filter>resource</Filter>
     </ClCompile>
-    <ClCompile Include="resource\shader\ShaderManager.cpp">
-      <Filter>resource\shader</Filter>
+    <ClCompile Include="resource\ShaderManager.cpp">
+      <Filter>resource</Filter>
     </ClCompile>
-    <ClCompile Include="resource\texture\TextureManager.cpp">
-      <Filter>resource\texture</Filter>
-    </ClCompile>
-    <ClCompile Include="resource\mesh\MeshItem.cpp">
-      <Filter>resource\mesh</Filter>
-    </ClCompile>
-    <ClCompile Include="resource\shader\ShaderProgram.cpp">
-      <Filter>resource\shader</Filter>
+    <ClCompile Include="io\FileReader.cpp">
+      <Filter>io</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@
 
 namespace ayy
 {
-	void Logger::Info(const std::string& msg)
+	/*void Logger::Info(const std::string& msg)
 	{
 		LogWithLevel(LogLevel::Info, msg);
 	}
@@ -18,5 +18,5 @@ namespace ayy
 	void Logger::Error(const std::string& msg)
 	{
 		LogWithLevel(LogLevel::Error, msg);
-	}
+	}*/
 }

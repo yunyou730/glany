@@ -4,6 +4,16 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
+#include "function/scene_management/Scene.h"
+
+#include "runtime/Engine.h"
+
+#include "core/util_func.h"
+
+#include "function/scene_management/component/MeshRenderComponent.h"
+#include "function/log/Logger.h"
+#include "function/io/FileReader.h"
+
 namespace ayy
 {
 void WindowTest()
@@ -40,7 +50,7 @@ void WindowTest()
 	}
 
 	
-	glClearColor(0.5, 0.7, 0.3, 1.0);
+	glClearColor(0.5f, 0.7f, 0.3f, 1.0f);
 	while (!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
@@ -61,7 +71,23 @@ void MathTest(float Translate, glm::vec2 const& Rotate)
 
 
 	Projection * View * Model;
+}
 
+void SpriteTest()
+{
+	auto scene = Engine::Instance()->GetScene();
+	auto entity = scene->CreateEntity();
+
+	MeshRenderComponent* renderComp = entity->AddComponent<MeshRenderComponent>();
+	Logger::Info("test\n");
+
+	auto fileContent = FileReader::ReadText("./builtin_assets/test.txt");
+	printf("%s\n",fileContent.c_str());
+}
+
+void ModelTest()
+{
+	
 }
 
 }

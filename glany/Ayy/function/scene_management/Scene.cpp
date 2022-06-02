@@ -32,7 +32,7 @@ void Scene::Tick()
 Entity* Scene::CreateEntity()
 {
 	Entity* entity = new Entity(AllocateEntityID());
-	entity->AddComponent(CLASS_NAME(TransformComponent),new TransformComponent());
+	entity->AddComponent<TransformComponent>();
 	_entityMap.insert(std::make_pair(entity->GetID(),entity));
 	return entity;
 }

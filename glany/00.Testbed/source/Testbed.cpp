@@ -2,38 +2,45 @@
 
 #include "runtime/Engine.h"
 #include "function/scene_management/Scene.h"
+#include "function/Log/Logger.h"
+
+
+#include "runtime/ayy.h"
 
 Testbed::Testbed()
 {
-	LogWithLevel(LogLevel::Info, "Testbed::Testbed()");
+	//LogWithLevel(LogLevel::Info, "Testbed::Testbed()");
+	ayy::Logger::Info("Testbed::Testbed()");
 }
 
 Testbed::~Testbed()
 {
-	LogWithLevel(LogLevel::Info, "Testbed::~Testbed()");
+	ayy::Logger::Info("Testbed::~Testbed()");
 }
 
 void Testbed::OnStart()
 {
-	LogWithLevel(LogLevel::Info, "Testbed::OnStart()");
+	ayy::Logger::Info("Testbed::OnStart()");
 
 
-	auto scene = ayy::Engine::Instance()->GetScene();
-	scene->CreateEntity();
-	scene->CreateEntity();
+	//auto scene = ayy::Engine::Instance()->GetScene();
+	//scene->CreateEntity();
+	//scene->CreateEntity();
+
+	ayy::SpriteTest();
 }
 
 void Testbed::OnUpdate()
 {
-	//LogWithLevel(LogLevel::Info, "Testbed::OnUpdate()");
+	//ayy::Logger::Info(LogLevel::Info, "Testbed::OnUpdate()");
 }
 
 void Testbed::OnLateUpdate()
 {
-	//LogWithLevel(LogLevel::Info, "Testbed::OnLateUpdate()");
+	//ayy::Logger::Info(LogLevel::Info, "Testbed::OnLateUpdate()");
 }
 
 void Testbed::OnDestroy()
 {
-	LogWithLevel(LogLevel::Info, "Testbed::OnDestroy()");
+	ayy::Logger::Info("Testbed::OnDestroy()");
 }

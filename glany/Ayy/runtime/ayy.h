@@ -15,6 +15,8 @@ namespace ayy
 
 void WindowTest();
 void MathTest(float Translate, glm::vec2 const& Rotate);
+void SpriteTest();
+void ModelTest();
 
 }
 

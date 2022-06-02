@@ -2,7 +2,6 @@
 
 #include "runtime/Application.h"
 #include "core/data_type.h"
-#include "core/util_func.h"
 
 class Testbed : public ayy::Application
 {

@@ -8,12 +8,24 @@ namespace ayy
 	class Logger
 	{
 	public:
-		static void Info(const std::string& msg);
-		static void Warning(const std::string& msg);
-		static void Error(const std::string& msg);
-	
-	//protected:
-	//	void Print(LogLevel level, const std::string& msg);
 
+		template<typename... Types>
+		static void Info(const std::string& format,Types... args)
+		{
+			LogWithLevel(LogLevel::Info, format, args...);
+		}
+
+
+		template<typename... Types>
+		static void Warning(const std::string& format, Types... args)
+		{
+			LogWithLevel(LogLevel::Warning, format,args...);
+		}
+
+		template<typename... Types>
+		static void Error(const std::string& format, Types... args)
+		{
+			LogWithLevel(LogLevel::Error, format, args...);
+		}
 	};
 }

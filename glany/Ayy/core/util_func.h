@@ -11,6 +11,23 @@
 
 #define CLASS_NAME(ClsName) #ClsName
 
-//NS_AYY_BEGIN
-void LogWithLevel(LogLevel logLevel, const std::string & msg);
-//NS_AYY_END
+template<typename... Types>
+void LogWithLevel(LogLevel logLevel,const std::string& format, Types... args)
+{
+	std::string logTag = "[log]";
+	switch (logLevel)
+	{
+	case LogLevel::Info:
+		logTag = "[info]";
+		break;
+	case LogLevel::Warning:
+		logTag = "[warn]";
+		break;
+	case LogLevel::Error:
+		logTag = "[error]";
+		break;
+	}
+	std::string tag = logTag + format + "\n";
+	printf(tag.c_str(), args...);
+}
+
