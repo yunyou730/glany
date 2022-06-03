@@ -2,6 +2,8 @@
 #include "core/util_func.h"
 #include "function/render/rhi/gl/GLRhi.h"
 #include "function/render/RenderPipeline.h"
+#include "function/render/render_command/RenderCommand.h"
+#include "function/render/render_command/MeshRenderCommand.h"
 
 #include "function/scene_management/Scene.h"
 #include "function/scene_management/component/TransformComponent.h"
@@ -35,6 +37,7 @@ void RenderSystem::Deinitialize()
 void RenderSystem::FrameBegin()
 {
 	_pipeline->FrameBegin(_rhi);
+	_commandList.clear();
 	BuildRenderCommandList();
 }
 
@@ -50,7 +53,13 @@ void RenderSystem::Render()
 
 void RenderSystem::BuildRenderCommandList()
 {
-	//_scene->QueryEntityByComps<TransformComponent,MeshRenderComponent>();
+	std::vector<Entity*> entities = _scene->QueryEntity<TransformComponent,MeshRenderComponent>();
+	for (auto it : entities)
+	{
+		Entity* entity = it;
+		RenderCommand* renderCmd = entity->GetComponent<MeshRenderComponent>()->GetRenderCommand();
+		_commandList.push_back(renderCmd);
+	}	
 }
 
 NS_AYY_END

@@ -8,19 +8,15 @@
 
 NS_AYY_BEGIN
 
-class BaseRenderCommand
+class RenderCommand
 {
 public:
-	unsigned int	order			= 0;
-
+	virtual void BeforeRender() {}
 	virtual void Render() = 0;
-};
+	virtual void AfterRender() {}
 
-//class CustomRenderCommand : public BaseRenderCommand
-//{
-//public:
-//
-//};
+	unsigned int	order			= 0;
+};
 
 NS_AYY_END
 

@@ -19,6 +19,8 @@ public:
 	void Initialize();
 	void Deinitialize();
 
+	ShaderProgram* GetShader(const std::string& key);
+
 protected:
 	void CreateBuiltinShaders();
 	ShaderProgram* CreateShader(const std::string& vsPath,const std::string& fsPath);

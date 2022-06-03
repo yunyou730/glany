@@ -40,7 +40,18 @@ public:
 			return false;
 		}
 		return HasComponent<ComponentType2, ComponentTypes...>();
-	}	
+	}
+
+	template<typename ComponentType>
+	ComponentType* GetComponent()
+	{
+		auto it = _componentMap.find(ComponentType::ClsName());
+		if (it == _componentMap.end())
+		{
+			return nullptr;
+		}
+		return static_cast<ComponentType*>(it->second);
+	}
 
 protected:
 	EntityID  _entityId = 0;

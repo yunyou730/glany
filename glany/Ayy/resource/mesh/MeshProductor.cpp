@@ -57,7 +57,7 @@ MeshItem* MeshProductor::CreateQuad()
 	}
 	glBindVertexArray(0);
 
-	MeshItem* item = new MeshItem(VAO, VBO, EBO, EVertexFormat::Pos);
+	MeshItem* item = new MeshItem(VAO, VBO, EBO, 4,6,EVertexFormat::Pos);
 	return item;
 }
 

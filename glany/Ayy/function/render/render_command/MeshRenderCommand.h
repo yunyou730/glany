@@ -1,14 +1,17 @@
 #pragma once
 
-#include "function/render/RenderCommand.h"
+#include "function/render/render_command/RenderCommand.h"
 
 #include "resource/mesh/MeshItem.h"
 #include "resource/shader/ShaderProgram.h"
 
 NS_AYY_BEGIN
 
-class MeshRenderCommand : public BaseRenderCommand
+class MeshRenderCommand : public RenderCommand
 {
+public:
+	virtual void Render() override;
+
 public:
 	std::string		meshHandle;
 	std::string		shaderHandle;

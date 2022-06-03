@@ -82,14 +82,14 @@ void SpriteTest()
 	auto scene = Engine::Instance()->GetScene();
 	auto entity = scene->CreateEntity();
 
-	MeshRenderComponent* renderComp = entity->AddComponent<MeshRenderComponent>();
-	Logger::Info("test\n");
+	entity->AddComponent<MeshRenderComponent>()->Initialize("@quad","@test1");
+	//Logger::Info("test\n");
 
 	auto fileContent = FileReader::ReadText("./builtin_assets/test.txt");
-	printf("%s\n",fileContent.c_str());
+	//printf("%s\n",fileContent.c_str());
 
-	scene->QueryEntity<TransformComponent, MeshRenderComponent,Test1Component>();
-	scene->QueryEntity<TransformComponent, MeshRenderComponent>();
+	//scene->QueryEntity<TransformComponent, MeshRenderComponent,Test1Component>();
+	//scene->QueryEntity<TransformComponent, MeshRenderComponent>();
 }
 
 void ModelTest()

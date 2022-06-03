@@ -36,7 +36,12 @@ void MeshManager::RemoveCache(const std::string& key)
 
 MeshItem* MeshManager::GetFromCache(const std::string& key)
 {
-	return nullptr;
+	auto it = _cache.find(key);
+	if (it == _cache.end())
+	{
+		return nullptr;
+	}
+	return it->second;
 }
 
 

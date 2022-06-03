@@ -55,6 +55,9 @@
     <Filter Include="resource\texture">
       <UniqueIdentifier>{d35d1a0e-4140-46b4-b826-0f68a43c48d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="function\render\render_command">
+      <UniqueIdentifier>{12bcaf31-4bc9-4c03-abd0-d663045bab8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\data_type.h">
@@ -102,9 +105,6 @@
     <ClInclude Include="function\render\RenderPipeline.h">
       <Filter>function\render</Filter>
     </ClInclude>
-    <ClInclude Include="function\render\RenderCommand.h">
-      <Filter>function\render</Filter>
-    </ClInclude>
     <ClInclude Include="function\scene_management\Scene.h">
       <Filter>function\scene_management</Filter>
     </ClInclude>
@@ -141,8 +141,11 @@
     <ClInclude Include="resource\shader\ShaderProgram.h">
       <Filter>resource\shader</Filter>
     </ClInclude>
-    <ClInclude Include="function\render\MeshRenderCommand.h">
-      <Filter>function\render</Filter>
+    <ClInclude Include="function\render\render_command\MeshRenderCommand.h">
+      <Filter>function\render\render_command</Filter>
+    </ClInclude>
+    <ClInclude Include="function\render\render_command\RenderCommand.h">
+      <Filter>function\render\render_command</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -191,9 +194,6 @@
     <ClCompile Include="function\render\RenderPipeline.cpp">
       <Filter>function\render</Filter>
     </ClCompile>
-    <ClCompile Include="function\render\RenderCommand.cpp">
-      <Filter>function\render</Filter>
-    </ClCompile>
     <ClCompile Include="function\scene_management\Scene.cpp">
       <Filter>function\scene_management</Filter>
     </ClCompile>
@@ -230,8 +230,11 @@
     <ClCompile Include="resource\shader\ShaderProgram.cpp">
       <Filter>resource\shader</Filter>
     </ClCompile>
-    <ClCompile Include="function\render\MeshRenderCommand.cpp">
-      <Filter>function\render</Filter>
+    <ClCompile Include="function\render\render_command\MeshRenderCommand.cpp">
+      <Filter>function\render\render_command</Filter>
+    </ClCompile>
+    <ClCompile Include="function\render\render_command\RenderCommand.cpp">
+      <Filter>function\render\render_command</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -32,8 +32,16 @@ void ShaderManager::Deinitialize()
 void ShaderManager::CreateBuiltinShaders()
 {
 	_cache.insert(std::make_pair("@test1", CreateShader("./builtin_assets/shaders/test1.vs", "./builtin_assets/shaders/test1.fs")));
+}
 
-
+ShaderProgram* ShaderManager::GetShader(const std::string& key)
+{
+	auto it = _cache.find(key);
+	if (it == _cache.end())
+	{
+		return nullptr;
+	}
+	return it->second;
 }
 
 ShaderProgram* ShaderManager::CreateShader(const std::string& vsPath, const std::string& fsPath)

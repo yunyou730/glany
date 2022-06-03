@@ -21,4 +21,14 @@ void ShaderProgram::Link()
 	glLinkProgram(_handle);
 }
 
+void ShaderProgram::Use()
+{
+	glUseProgram(_handle);
+}
+
+void ShaderProgram::UnUse()
+{
+	glUseProgram(0);
+}
+
 NS_AYY_END

@@ -1,6 +1,6 @@
 #include "RenderPipeline.h"
 #include "function/render/rhi/rhi.h"
-#include "RenderCommand.h"
+#include "function/render/render_command/RenderCommand.h"
 #include <vector>
 
 NS_AYY_BEGIN
@@ -28,7 +28,11 @@ void RenderPipeline::FrameEnd(Rhi* rhi)
 
 void RenderPipeline::Render(Rhi* rhi,const std::vector<RenderCommand*>& renderCommandList)
 {
-
+	for (auto it : renderCommandList)
+	{
+		RenderCommand* renderCmd = it;
+		renderCmd->Render();
+	}
 }
 
 NS_AYY_END

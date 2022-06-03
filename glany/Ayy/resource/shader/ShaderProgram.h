@@ -13,9 +13,11 @@ class ShaderProgram
 {
 public:
 	ShaderProgram(unsigned int program,const std::string& vsCode,const std::string& fsCode);
-	
-	ShaderHandle GetHandle() const { return _handle; }
 
+	void Use();
+	void UnUse();
+		
+	ShaderHandle GetHandle() const { return _handle; }
 	void AttachShader(unsigned int shader);
 	void Link();
 
