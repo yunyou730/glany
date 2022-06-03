@@ -9,10 +9,11 @@ NS_AYY_BEGIN
 
 class RenderPipeline;
 class RenderCommand;
+class Scene;
 class RenderSystem
 {
 public:
-	RenderSystem();
+	RenderSystem(Scene* scene);
 	~RenderSystem();
 
 	void Initialize(const FrameRenderState& frameRenderState);
@@ -30,6 +31,8 @@ protected:
 	Rhi*			_rhi		= nullptr;
 	RenderPipeline* _pipeline	= nullptr;
 	std::vector<RenderCommand*>	_commandList;
+
+	Scene* _scene = nullptr;
 };
 
 NS_AYY_END

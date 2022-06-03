@@ -8,14 +8,26 @@
 #include "Testbed.h"
 
 #include "ReflectTest.h"
+#include <typeinfo>
 
-void ReflTest()
+using namespace std;
+template <class A> void func()
 {
-	
+	cerr << "Concrete Class: " << typeid(A).name() << endl;
+}
+
+template <class A, class B, class ...C> void func()
+{
+	cerr << "Concrete Class A: " << typeid(A).name() << endl;
+	func<B, C...>();
 }
 
 int main()
 {
+	//func<int, float>();
+	//func<int, float, double>();
+	//return 0;
+
 	//ReflTest();
 
 	//ClsA a;

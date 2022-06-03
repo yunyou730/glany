@@ -11,8 +11,12 @@
 #include "core/util_func.h"
 
 #include "function/scene_management/component/MeshRenderComponent.h"
+#include "function/scene_management/component/TransformComponent.h"
+
 #include "function/log/Logger.h"
 #include "function/io/FileReader.h"
+
+
 
 namespace ayy
 {
@@ -83,6 +87,9 @@ void SpriteTest()
 
 	auto fileContent = FileReader::ReadText("./builtin_assets/test.txt");
 	printf("%s\n",fileContent.c_str());
+
+	scene->QueryEntity<TransformComponent, MeshRenderComponent,Test1Component>();
+	scene->QueryEntity<TransformComponent, MeshRenderComponent>();
 }
 
 void ModelTest()

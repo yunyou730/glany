@@ -141,6 +141,9 @@
     <ClInclude Include="resource\shader\ShaderProgram.h">
       <Filter>resource\shader</Filter>
     </ClInclude>
+    <ClInclude Include="function\render\MeshRenderCommand.h">
+      <Filter>function\render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\ayy.cpp">
@@ -226,6 +229,9 @@
     </ClCompile>
     <ClCompile Include="resource\shader\ShaderProgram.cpp">
       <Filter>resource\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="function\render\MeshRenderCommand.cpp">
+      <Filter>function\render</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

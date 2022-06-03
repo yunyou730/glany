@@ -20,4 +20,21 @@ protected:
 	Entity* _entity = nullptr;
 };
 
+
+
+class Test1Component : public BaseComponent
+{
+public:
+	static const std::string ClsName() { return CLASS_NAME(ayy::Test1Component); }
+	Test1Component(Entity* entity) :BaseComponent(entity) {}
+};
+
+class Test2Component : public BaseComponent
+{
+public:
+	static const std::string ClsName() { return CLASS_NAME(ayy::Test2Component); }
+	Test2Component(Entity* entity) :BaseComponent(entity) {}
+};
+
+
 NS_AYY_END

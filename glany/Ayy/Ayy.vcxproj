@@ -23,6 +23,7 @@
     <ClCompile Include="core\util_func.cpp" />
     <ClCompile Include="function\io\FileReader.cpp" />
     <ClCompile Include="function\log\Logger.cpp" />
+    <ClCompile Include="function\render\MeshRenderCommand.cpp" />
     <ClCompile Include="function\render\RenderCommand.cpp" />
     <ClCompile Include="function\render\RenderPipeline.cpp" />
     <ClCompile Include="function\render\RenderState.cpp" />
@@ -53,6 +54,7 @@
     <ClInclude Include="core\util_func.h" />
     <ClInclude Include="function\io\FileReader.h" />
     <ClInclude Include="function\log\Logger.h" />
+    <ClInclude Include="function\render\MeshRenderCommand.h" />
     <ClInclude Include="function\render\RenderCommand.h" />
     <ClInclude Include="function\render\RenderPipeline.h" />
     <ClInclude Include="function\render\RenderState.h" />

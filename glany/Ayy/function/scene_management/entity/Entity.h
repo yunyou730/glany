@@ -24,6 +24,23 @@ public:
 		_componentMap.insert(std::make_pair(CompCls::ClsName(), comp));
 		return comp;
 	}
+	
+	template<typename ComponentType>
+	bool HasComponent()
+	{
+		return _componentMap.find(ComponentType::ClsName()) != _componentMap.end();
+	}
+
+
+	template<typename ComponentType1,typename ComponentType2, typename... ComponentTypes>
+	bool HasComponent()
+	{
+		if (!HasComponent<ComponentType1>())
+		{
+			return false;
+		}
+		return HasComponent<ComponentType2, ComponentTypes...>();
+	}	
 
 protected:
 	EntityID  _entityId = 0;

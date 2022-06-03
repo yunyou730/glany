@@ -21,7 +21,7 @@ Engine::Engine()
 	
 	_window = new GLWindow();
 	_scene = new Scene();
-	_renderSystem = new RenderSystem();
+	_renderSystem = new RenderSystem(_scene);
 	
 	_meshManager = new MeshManager();
 	_shaderManager = new ShaderManager();

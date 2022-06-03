@@ -9,7 +9,6 @@
 
 Testbed::Testbed()
 {
-	//LogWithLevel(LogLevel::Info, "Testbed::Testbed()");
 	ayy::Logger::Info("Testbed::Testbed()");
 }
 
@@ -21,12 +20,7 @@ Testbed::~Testbed()
 void Testbed::OnStart()
 {
 	ayy::Logger::Info("Testbed::OnStart()");
-
-
-	//auto scene = ayy::Engine::Instance()->GetScene();
-	//scene->CreateEntity();
-	//scene->CreateEntity();
-
+	
 	ayy::SpriteTest();
 }
 

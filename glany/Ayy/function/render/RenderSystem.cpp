@@ -3,10 +3,14 @@
 #include "function/render/rhi/gl/GLRhi.h"
 #include "function/render/RenderPipeline.h"
 
+#include "function/scene_management/Scene.h"
+#include "function/scene_management/component/TransformComponent.h"
+#include "function/scene_management/component/MeshRenderComponent.h"
 
 NS_AYY_BEGIN
 
-RenderSystem::RenderSystem()
+RenderSystem::RenderSystem(Scene* scene)
+	:_scene(scene)
 {
 	
 }
@@ -46,8 +50,7 @@ void RenderSystem::Render()
 
 void RenderSystem::BuildRenderCommandList()
 {
-	// @miao @todo
-
+	//_scene->QueryEntityByComps<TransformComponent,MeshRenderComponent>();
 }
 
 NS_AYY_END
