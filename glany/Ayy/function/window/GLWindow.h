@@ -1,28 +1,32 @@
 #pragma once
 
 #include "function/window/Window.h"
+#include "core/util_func.h"
 
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
-namespace ayy
+NS_AYY_BEGIN
+
+class GLWindow : public Window
 {
-	class GLWindow : public Window
-	{
-	public:
-		GLWindow();
-		virtual ~GLWindow();
+public:
+	GLWindow();
+	virtual ~GLWindow();
 
-		virtual bool Initialize(const WindowCreateParam& windowCreateParam) override;
-		virtual void Deinitialize() override;
+	virtual bool Initialize(const WindowCreateParam& windowCreateParam) override;
+	virtual void Deinitialize() override;
 		
-		virtual bool ShouldClose() const override;
+	virtual bool ShouldClose() const override;
 
-		virtual void FrameBegin() override;
-		virtual void FrameEnd() override;
+	virtual void FrameBegin() override;
+	virtual void FrameEnd() override;
 
-	protected:
-		GLFWwindow* _glfwWindow = nullptr;
-	};
+public:
+	virtual void OnWindowSizeChanged(float widht, float height) override;
 	
-}
+protected:
+	GLFWwindow* _glfwWindow = nullptr;
+};
+	
+NS_AYY_END

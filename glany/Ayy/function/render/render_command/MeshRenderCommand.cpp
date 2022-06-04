@@ -27,6 +27,7 @@ void MeshRenderCommand::Render()
 	ShaderProgram* shaderProgram = Engine::Instance()->GetShaderManager()->GetShader(_meshRender->ShaderKey());
 
 	shaderProgram->Use();
+	shaderProgram->SetUniformMatrix4x4("u_Model", _transform->MVPMatrix());
 	meshItem->Bind();
 	meshItem->DrawCall();
 	meshItem->UnBind();

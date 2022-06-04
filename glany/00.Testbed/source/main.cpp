@@ -4,11 +4,7 @@
 #include "runtime/EngineLaunchParam.h"
 #include "runtime/Engine.h"
 
-
 #include "Testbed.h"
-//#include "ReflectTest.h"
-//#include <typeinfo>
-
 
 int main()
 {

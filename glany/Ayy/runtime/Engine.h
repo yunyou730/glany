@@ -24,7 +24,7 @@ namespace ayy
 		void Initialize(const EngineLaunchParam& launchParam,Application* app);
 		void Deinitialize();
 		void Run();
-
+		
 	public:
 		Scene* GetScene() { return _scene; }
 

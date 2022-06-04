@@ -40,6 +40,8 @@ namespace ayy
 		{
 			return _size;
 		}
+	
+		virtual void OnWindowSizeChanged(float widht, float height) = 0;
 
 	protected:
 		ayy::Dimension2i _size;

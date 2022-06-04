@@ -1,74 +1,90 @@
 #include "GLWindow.h"
-
-#include "core/util_func.h"
 #include "function/log/Logger.h"
+#include <functional>
 
-namespace ayy
+NS_AYY_BEGIN
+
+static GLWindow* s_windowInstance = nullptr;
+
+static void frameBufferSizeCallback(GLFWwindow* window, int width, int height)
 {
-
-	GLWindow::GLWindow()
+	if (s_windowInstance != nullptr)
 	{
-	
+		s_windowInstance->OnWindowSizeChanged(width,height);
 	}
+};
 
-	GLWindow::~GLWindow()
-	{
-	
-	}
-
-	bool GLWindow::Initialize(const WindowCreateParam& windowCreateParam)
-	{
-		glfwInit();
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-		//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-
-
-		_glfwWindow = glfwCreateWindow(windowCreateParam.size.x, windowCreateParam.size.y, windowCreateParam.caption.c_str(), NULL, NULL);
-		if (_glfwWindow == NULL)
-		{
-			Logger::Error("Failed to create GLFW window");
-			glfwTerminate();
-
-			return false;
-		}
-		glfwMakeContextCurrent(_glfwWindow);
-
-
-		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-		{
-			Logger::Error("Failed to create GLFW window");
-			return false;
-		}
-
-		Logger::Info("GLWindow::Initialize Success");
-		return true;
-	}
-
-	void GLWindow::Deinitialize()
-	{
-		glfwTerminate();
-		Logger::Info("GLWindow::Deinitialize");
-	}
-	
-
-	bool GLWindow::ShouldClose() const
-	{
-		return glfwWindowShouldClose(_glfwWindow);
-	}
-
-
-	void GLWindow::FrameBegin()
-	{
-	
-	}
-
-	void GLWindow::FrameEnd()
-	{
-		glfwSwapBuffers(_glfwWindow);
-		glfwPollEvents();
-	}
-
+GLWindow::GLWindow()
+{
+	s_windowInstance = this;
 }
+
+GLWindow::~GLWindow()
+{
+	s_windowInstance = nullptr;
+}
+
+bool GLWindow::Initialize(const WindowCreateParam& windowCreateParam)
+{
+	glfwInit();
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+
+
+	_glfwWindow = glfwCreateWindow(windowCreateParam.size.x, windowCreateParam.size.y, windowCreateParam.caption.c_str(), NULL, NULL);
+	if (_glfwWindow == NULL)
+	{
+		Logger::Error("Failed to create GLFW window");
+		glfwTerminate();
+
+		return false;
+	}
+	glfwMakeContextCurrent(_glfwWindow);
+
+
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		Logger::Error("Failed to create GLFW window");
+		return false;
+	}
+
+	Logger::Info("GLWindow::Initialize Success");
+	
+	glfwSetFramebufferSizeCallback(_glfwWindow,frameBufferSizeCallback);
+	return true;
+}
+
+void GLWindow::Deinitialize()
+{
+	glfwTerminate();
+	Logger::Info("GLWindow::Deinitialize");
+}
+	
+
+bool GLWindow::ShouldClose() const
+{
+	return glfwWindowShouldClose(_glfwWindow);
+}
+
+
+void GLWindow::FrameBegin()
+{
+	
+}
+
+void GLWindow::FrameEnd()
+{
+	glfwSwapBuffers(_glfwWindow);
+	glfwPollEvents();
+}
+
+void GLWindow::OnWindowSizeChanged(float widht, float height)
+{
+	glViewport(0, 0, widht, height);
+	_size = ayy::Dimension2f(widht, height);
+}
+
+NS_AYY_END

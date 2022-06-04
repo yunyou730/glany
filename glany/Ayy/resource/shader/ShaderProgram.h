@@ -21,6 +21,9 @@ public:
 	void AttachShader(unsigned int shader);
 	void Link();
 
+	void SetUniformMatrix4x4(const std::string& uniform,const glm::mat4& value);
+	void SetUniformFloat(const std::string& uniform,float value);
+
 protected:
 	ShaderHandle _handle = 0;
 	const std::string _vsCode;

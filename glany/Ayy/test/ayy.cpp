@@ -91,6 +91,10 @@ void SpriteTest()
 	auto scene = Engine::Instance()->GetScene();
 	auto entity = scene->CreateEntity();
 
+	TransformComponent* transform = entity->GetComponent<TransformComponent>();
+	transform->SetScale(0.2);
+	transform->SetPosition(0, 0.5, 0);
+
 	entity->AddComponent<MeshRenderComponent>()->Initialize("@quad","@test1");
 	
 	entity = scene->CreateEntity();

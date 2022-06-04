@@ -21,6 +21,7 @@ public:
 
 	void SetPosition(float x, float y, float z) { _pos.x = x; _pos.y = y; _pos.z = z; }
 		
+	void SetScale(const float scale) { _scale = glm::vec3(scale); }
 	void SetScale(const float sx, const float sy, const float sz) { _scale.x = sx; _scale.y = sy; _scale.z = sz; }
 	void SetScaleX(const float sx) { _scale.x = sx; }
 	void SetScaleY(const float sy) { _scale.y = sy; }
