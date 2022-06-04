@@ -21,6 +21,7 @@ void Testbed::OnStart()
 {
 	ayy::Logger::Info("Testbed::OnStart()");
 	
+	//ayy::MathTest();
 	ayy::SpriteTest();
 }
 

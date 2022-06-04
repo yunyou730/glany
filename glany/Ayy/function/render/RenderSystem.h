@@ -26,6 +26,7 @@ public:
 
 protected:
 	void BuildRenderCommandList();
+	void ClearRenderCommandList();
 
 protected:
 	Rhi*			_rhi		= nullptr;

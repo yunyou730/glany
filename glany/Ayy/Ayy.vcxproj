@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\data_type.cpp" />
+    <ClCompile Include="core\math_util.cpp" />
     <ClCompile Include="core\util_func.cpp" />
     <ClCompile Include="function\io\FileReader.cpp" />
     <ClCompile Include="function\log\Logger.cpp" />
@@ -32,6 +33,7 @@
     <ClCompile Include="function\render\rhi\rhi.cpp" />
     <ClCompile Include="function\render\rhi\rhi_data_type.cpp" />
     <ClCompile Include="function\scene_management\component\BaseComponent.cpp" />
+    <ClCompile Include="function\scene_management\component\CameraComponent.cpp" />
     <ClCompile Include="function\scene_management\component\MeshRenderComponent.cpp" />
     <ClCompile Include="function\scene_management\component\TransformComponent.cpp" />
     <ClCompile Include="function\scene_management\entity\Entity.cpp" />
@@ -51,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\data_type.h" />
+    <ClInclude Include="core\math_util.h" />
     <ClInclude Include="core\util_func.h" />
     <ClInclude Include="function\io\FileReader.h" />
     <ClInclude Include="function\log\Logger.h" />
@@ -63,6 +66,7 @@
     <ClInclude Include="function\render\rhi\rhi.h" />
     <ClInclude Include="function\render\rhi\rhi_data_type.h" />
     <ClInclude Include="function\scene_management\component\BaseComponent.h" />
+    <ClInclude Include="function\scene_management\component\CameraComponent.h" />
     <ClInclude Include="function\scene_management\component\MeshRenderComponent.h" />
     <ClInclude Include="function\scene_management\component\TransformComponent.h" />
     <ClInclude Include="function\scene_management\entity\Entity.h" />

@@ -6,63 +6,12 @@
 
 
 #include "Testbed.h"
+//#include "ReflectTest.h"
+//#include <typeinfo>
 
-#include "ReflectTest.h"
-#include <typeinfo>
-
-using namespace std;
-template <class A> void func()
-{
-	cerr << "Concrete Class: " << typeid(A).name() << endl;
-}
-
-template <class A, class B, class ...C> void func()
-{
-	cerr << "Concrete Class A: " << typeid(A).name() << endl;
-	func<B, C...>();
-}
 
 int main()
 {
-	//func<int, float>();
-	//func<int, float, double>();
-	//return 0;
-
-	//ReflTest();
-
-	//ClsA a;
-	//printf("%d\n",a.a);
-
-
-
-	//extern double sum(int count, ...);
-	//double d = sum(3,1.0,2.0,3.0,4.0);
-	//printf("%.3f\n",d);
-
-
-	//BMW<int, char,float> bmw;
-
-
-	//d = Sum2(1.0,2.0,3.0,4.0);
-	//printf("%.3f\n", d);
-
-
-
-	//extern void MyPrint1(const char* s, ...);
-
-	//MyPrint1("%d %d", 123, 333);
-
-	//MyPrint1("%d %s %.2f\n", 123, "miao",2.557);
-
-
-	//MyPrint("test:%d,%s", 3,"fds");
-
-	//return 1;
-
-	//ayy::MathTest(3.0,glm::vec2(1.0,3.0));
-	//ayy::WindowTest();
-	//printf("00.Testbed %s\n",typename(int));
-	
 	auto launchParam = ayy::EngineLaunchParam::BuildLaunchParam(ayy::Dimension2f(800,600), "00.Testbed", ayy::Color4f(0.5, 0.7, 0.3, 1.0));
 	auto engine = ayy::Engine();
 

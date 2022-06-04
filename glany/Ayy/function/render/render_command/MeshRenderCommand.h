@@ -6,19 +6,19 @@
 #include "resource/shader/ShaderProgram.h"
 
 NS_AYY_BEGIN
-
+class TransformComponent;
+class CameraComponent;
+class MeshRenderComponent;
 class MeshRenderCommand : public RenderCommand
 {
 public:
 	virtual void Render() override;
+	void Initialize(TransformComponent* transformComp, MeshRenderComponent* meshRender,CameraComponent* cameraComp);
 
-public:
-	std::string		meshHandle;
-	std::string		shaderHandle;
-	
-	glm::vec3	pos					= glm::vec3(0, 0, 0);
-	glm::vec3	rotate				= glm::vec3(0, 0, 0);
-	glm::vec3	scale				= glm::vec3(1, 1, 1);
+protected:
+	TransformComponent* _transform = nullptr;
+	MeshRenderComponent* _meshRender = nullptr;
+	CameraComponent*	_camera = nullptr;
 };
 
 NS_AYY_END

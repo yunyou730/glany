@@ -147,6 +147,12 @@
     <ClInclude Include="function\render\render_command\RenderCommand.h">
       <Filter>function\render\render_command</Filter>
     </ClInclude>
+    <ClInclude Include="function\scene_management\component\CameraComponent.h">
+      <Filter>function\scene_management\component</Filter>
+    </ClInclude>
+    <ClInclude Include="core\math_util.h">
+      <Filter>core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\ayy.cpp">
@@ -235,6 +241,12 @@
     </ClCompile>
     <ClCompile Include="function\render\render_command\RenderCommand.cpp">
       <Filter>function\render\render_command</Filter>
+    </ClCompile>
+    <ClCompile Include="function\scene_management\component\CameraComponent.cpp">
+      <Filter>function\scene_management\component</Filter>
+    </ClCompile>
+    <ClCompile Include="core\math_util.cpp">
+      <Filter>core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

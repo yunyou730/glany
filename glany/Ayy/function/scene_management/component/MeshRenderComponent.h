@@ -16,20 +16,22 @@ public:
 	static const std::string ClsName() { return CLASS_NAME(ayy::MeshRenderComponent); }
 
 public:
- 	MeshRenderComponent(Entity* entity);
+	MeshRenderComponent(Entity* entity);
 	~MeshRenderComponent();
 
 	void Initialize(const std::string& meshKey, const std::string& shaderKey);
 	void Deinitialize();
 
-	MeshRenderCommand* GetRenderCommand() { return _renderCommand; }
-	
+	std::string MeshKey() const { return _meshKey; }
+	std::string ShaderKey() const { return _shaderKey; }
+
 protected:
 	void SetMesh(const std::string& meshKey);
 	void SetShader(const std::string& shaderKey);
 
 protected:
-	MeshRenderCommand* _renderCommand = nullptr;
+	std::string _meshKey;
+	std::string _shaderKey;
 
 };
 

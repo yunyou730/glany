@@ -12,11 +12,12 @@
 
 #include "function/scene_management/component/MeshRenderComponent.h"
 #include "function/scene_management/component/TransformComponent.h"
+#include "function/scene_management/component/CameraComponent.h"
 
 #include "function/log/Logger.h"
 #include "function/io/FileReader.h"
 
-
+#include "core/math_util.h"
 
 namespace ayy
 {
@@ -79,17 +80,22 @@ void MathTest(float Translate, glm::vec2 const& Rotate)
 
 void SpriteTest()
 {
+	glm::mat4 test = glm::mat4(1.0f);
+	ayy::Dump(test);
+
+	test = glm::translate(test, glm::vec3(1,2,3));
+	ayy::Dump(test);
+
+	ayy::Dump<glm::vec4>(glm::vec4(1,2,3,4));
+	
 	auto scene = Engine::Instance()->GetScene();
 	auto entity = scene->CreateEntity();
 
 	entity->AddComponent<MeshRenderComponent>()->Initialize("@quad","@test1");
-	//Logger::Info("test\n");
-
-	auto fileContent = FileReader::ReadText("./builtin_assets/test.txt");
-	//printf("%s\n",fileContent.c_str());
-
-	//scene->QueryEntity<TransformComponent, MeshRenderComponent,Test1Component>();
-	//scene->QueryEntity<TransformComponent, MeshRenderComponent>();
+	
+	entity = scene->CreateEntity();
+	entity->AddComponent<CameraComponent>()->Initialize(ECameraProjType::Persp, glm::vec3(0,0,-1));
+	//entity->GetComponent<TransformComponent>()->
 }
 
 void ModelTest()

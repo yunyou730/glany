@@ -16,24 +16,23 @@ MeshRenderComponent::~MeshRenderComponent()
 
 void MeshRenderComponent::Initialize(const std::string& meshKey, const std::string& shaderKey)
 {
-	_renderCommand = new MeshRenderCommand();
 	SetMesh(meshKey);
 	SetShader(shaderKey);
 }
 
 void MeshRenderComponent::Deinitialize()
 {
-	SAFE_DEL(_renderCommand);
+
 }
 
 void MeshRenderComponent::SetMesh(const std::string& meshKey)
 {
-	_renderCommand->meshHandle = meshKey;
+	_meshKey = meshKey;
 }
 
 void MeshRenderComponent::SetShader(const std::string& shaderKey)
 {
-	_renderCommand->shaderHandle = shaderKey;
+	_shaderKey = shaderKey;
 }
 
 NS_AYY_END

@@ -15,7 +15,6 @@ namespace ayy
 			LogWithLevel(LogLevel::Info, format, args...);
 		}
 
-
 		template<typename... Types>
 		static void Warning(const std::string& format, Types... args)
 		{
