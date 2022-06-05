@@ -11,6 +11,12 @@
 
 #define CLASS_NAME(ClsName) #ClsName
 
+#define NS_EDITOR_BEGIN namespace fancy {
+#define NS_EDITOR_END }
+
+#define NS_AYY_EDITOR_BEGIN namespace ayy { namespace fancy {
+#define NS_AYY_EDITOR_END }}
+
 template<typename... Types>
 void LogWithLevel(LogLevel logLevel,const std::string& format, Types... args)
 {

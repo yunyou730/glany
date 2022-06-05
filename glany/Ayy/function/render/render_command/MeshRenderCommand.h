@@ -16,6 +16,9 @@ public:
 	void Initialize(TransformComponent* transformComp, MeshRenderComponent* meshRender,CameraComponent* cameraComp);
 
 protected:
+	glm::mat4 CalcViewMatrix();
+
+protected:
 	TransformComponent* _transform = nullptr;
 	MeshRenderComponent* _meshRender = nullptr;
 	CameraComponent*	_camera = nullptr;

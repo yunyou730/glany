@@ -92,8 +92,8 @@ void SpriteTest()
 	auto entity = scene->CreateEntity();
 
 	TransformComponent* transform = entity->GetComponent<TransformComponent>();
-	transform->SetScale(0.2);
-	transform->SetPosition(0, 0.5, 0);
+	transform->SetScale(0.2f);
+	transform->SetPosition(0, 0.5f, 0);
 
 	entity->AddComponent<MeshRenderComponent>()->Initialize("@quad","@test1");
 	

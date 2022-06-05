@@ -21,7 +21,12 @@ void Scene::Initialize()
 
 void Scene::Deinitialize()
 {
-
+	for(auto it : _entityMap)
+	{
+		Entity* entity = it.second;
+		SAFE_DEL(entity);
+	}
+	_entityMap.clear();
 }
 
 void Scene::Tick()
@@ -41,6 +46,18 @@ EntityID Scene::AllocateEntityID()
 {
 	_entityIdSeed++;
 	return _entityIdSeed;
+}
+
+void Scene::DestroyEntity(EntityID entityId)
+{
+	auto it = _entityMap.find(entityId);
+	if (it != _entityMap.end())
+	{
+		Entity* entity = it->second;
+		_entityMap.erase(it);
+
+		SAFE_DEL(entity);
+	}
 }
 
 NS_AYY_END

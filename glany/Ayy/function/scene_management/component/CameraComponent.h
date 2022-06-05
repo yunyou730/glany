@@ -23,24 +23,23 @@ public:
 	CameraComponent(Entity* entity);
 
 	void Initialize(ECameraProjType projType,const glm::vec3& lookDir);
-
-	const glm::mat4& GetViewMatrix();
+	
 	const glm::mat4& GetProjectionMatrix();
 
 	const unsigned int GetLayer() const { return _layer; }
 
+	glm::vec3 GetLookDir() { return _lookDir; }
+
 protected:
-	void CalcViewMatrix();
 	void CalcProjectionMatrix();
 
 protected:
 	glm::vec3	_lookDir;
 	ECameraProjType	_projType = ECameraProjType::Persp;
 
-	glm::mat4	_viewMatrix;
+	//glm::mat4	_viewMatrix;
 	glm::mat4	_projMatrix;
-
-
+	
 	unsigned int _layer = 0;
 };
 

@@ -1,14 +1,19 @@
 #include "runtime/Engine.h"
+#include <cassert>
+#include "core/util_func.h"
 
 #include "function/window/GLWindow.h"
+#include "function/scene_management/Scene.h"
 #include "function/render/RenderSystem.h"
-#include "core/util_func.h"
-#include <cassert>
+#include "function/imgui/GUISystem.h"
+#include "function/event/EventManager.h"
+#include "function/scene_management/SceneManageSystem.h"
 
 #include "resource/mesh/MeshManager.h"
 #include "resource/shader/ShaderManager.h"
 #include "resource/texture/TextureManager.h"
 
+#include "editor/Editor.h"
 
 NS_AYY_BEGIN
 
@@ -22,10 +27,14 @@ Engine::Engine()
 	_window = new GLWindow();
 	_scene = new Scene();
 	_renderSystem = new RenderSystem(_scene);
+	_guiSystem = new GUISystem(_scene);
+	_sceneManageSystem = new SceneManageSystem();
 	
 	_meshManager = new MeshManager();
 	_shaderManager = new ShaderManager();
 	_textureManager = new TextureManager();
+	_editor = new fancy::Editor();
+	_eventManager = new EventManager();
 }
 	
 Engine::~Engine()
@@ -33,9 +42,11 @@ Engine::~Engine()
 	SAFE_DEL(_meshManager);
 	SAFE_DEL(_shaderManager);
 	SAFE_DEL(_textureManager);
+	SAFE_DEL(_eventManager);
 
-
+	SAFE_DEL(_sceneManageSystem);
 	SAFE_DEL(_renderSystem);
+	SAFE_DEL(_guiSystem);
 	SAFE_DEL(_window);
 
 	s_instance = nullptr;
@@ -46,7 +57,12 @@ void Engine::Initialize(const EngineLaunchParam& launchParam,Application* app)
 	_app = app;
 	_window->Initialize(launchParam.windowCreateParam);
 	_scene->Initialize();
+	_editor->OnStart();
+
+	
+	_guiSystem->Initialize(dynamic_cast<GLWindow*>(_window));
 	_renderSystem->Initialize(launchParam.frameRenderState);
+	_sceneManageSystem->Initialize();
 
 	_meshManager->Initialize();
 	_shaderManager->Initialize();
@@ -58,9 +74,12 @@ void Engine::Initialize(const EngineLaunchParam& launchParam,Application* app)
 void Engine::Deinitialize()
 {
 	_app->OnDestroy();
-	_window->Deinitialize();
-	_scene->Deinitialize();
+	_editor->OnDestroy();
+	_guiSystem->Deinitialize();
 	_renderSystem->Deinitialize();
+	_window->Deinitialize();
+	_sceneManageSystem->Deinitialize();
+	_scene->Deinitialize();
 
 	_meshManager->Deinitialize();
 	_shaderManager->Deinitialize();
@@ -88,15 +107,27 @@ void Engine::CalcDeltaTime()
 
 void Engine::TickLogic()
 {
+	_eventManager->OnFrameBegin();
 	_app->OnUpdate();
 	_app->OnLateUpdate();
+	_eventManager->OnFrameEnd();
 }
 
 void Engine::TickRender()
 {
 	_renderSystem->FrameBegin();
+	_guiSystem->FrameBegin();
+
 	_renderSystem->Render();
+
+	if (_editor != nullptr)
+	{
+		_editor->OnGUI();
+	}
+	_guiSystem->Render();
+
 	_renderSystem->FrameEnd();
+	_guiSystem->FrameEnd();
 }
 
 NS_AYY_END

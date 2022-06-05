@@ -20,8 +20,8 @@ public:
 	void Tick();
 
 	Entity* CreateEntity();
+	void DestroyEntity(EntityID entityId);
 	
-
 	template<typename... ComponentTypes>
 	std::vector<Entity*> QueryEntity()
 	{
@@ -36,6 +36,8 @@ public:
 		}
 		return result;
 	}
+
+	std::map<EntityID, Entity*>& GetEntityMap() { return _entityMap; }
 	
 protected:
 	EntityID AllocateEntityID();

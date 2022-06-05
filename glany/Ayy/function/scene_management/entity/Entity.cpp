@@ -10,7 +10,11 @@ Entity::Entity(EntityID entityId)
 
 Entity::~Entity()
 {
-
+	for (auto it : _componentMap)
+	{
+		BaseComponent* comp = it.second;
+		SAFE_DEL(comp);
+	}
 }
 
 NS_AYY_END

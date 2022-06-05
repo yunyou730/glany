@@ -58,6 +58,15 @@
     <Filter Include="function\render\render_command">
       <UniqueIdentifier>{12bcaf31-4bc9-4c03-abd0-d663045bab8c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="function\imgui">
+      <UniqueIdentifier>{9be008f6-f035-43fe-a12c-92984e0c94d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="editor">
+      <UniqueIdentifier>{4013b2ef-9f58-49bf-b5c9-50717bb5756b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="function\event">
+      <UniqueIdentifier>{3c2c4136-9a05-45fa-811d-38581138121c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\data_type.h">
@@ -153,6 +162,30 @@
     <ClInclude Include="core\math_util.h">
       <Filter>core</Filter>
     </ClInclude>
+    <ClInclude Include="function\imgui\GUISystem.h">
+      <Filter>function\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\Editor.h">
+      <Filter>editor</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\Hierarchy.h">
+      <Filter>editor</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\Panel.h">
+      <Filter>editor</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\Inspector.h">
+      <Filter>editor</Filter>
+    </ClInclude>
+    <ClInclude Include="function\event\EventManager.h">
+      <Filter>function\event</Filter>
+    </ClInclude>
+    <ClInclude Include="function\event\Event.h">
+      <Filter>function\event</Filter>
+    </ClInclude>
+    <ClInclude Include="function\scene_management\SceneManageSystem.h">
+      <Filter>function\scene_management</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\ayy.cpp">
@@ -247,6 +280,30 @@
     </ClCompile>
     <ClCompile Include="core\math_util.cpp">
       <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="function\imgui\GUISystem.cpp">
+      <Filter>function\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\Editor.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\Hierarchy.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\Panel.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\Inspector.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="function\event\EventManager.cpp">
+      <Filter>function\event</Filter>
+    </ClCompile>
+    <ClCompile Include="function\event\Event.cpp">
+      <Filter>function\event</Filter>
+    </ClCompile>
+    <ClCompile Include="function\scene_management\SceneManageSystem.cpp">
+      <Filter>function\scene_management</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
