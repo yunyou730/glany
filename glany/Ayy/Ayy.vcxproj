@@ -23,6 +23,8 @@
     <ClCompile Include="core\math_util.cpp" />
     <ClCompile Include="core\util_func.cpp" />
     <ClCompile Include="editor\Editor.cpp" />
+    <ClCompile Include="editor\EditorEvent.cpp" />
+    <ClCompile Include="editor\EditorUtil.cpp" />
     <ClCompile Include="editor\Hierarchy.cpp" />
     <ClCompile Include="editor\Inspector.cpp" />
     <ClCompile Include="editor\Panel.cpp" />
@@ -64,6 +66,8 @@
     <ClInclude Include="core\math_util.h" />
     <ClInclude Include="core\util_func.h" />
     <ClInclude Include="editor\Editor.h" />
+    <ClInclude Include="editor\EditorEvent.h" />
+    <ClInclude Include="editor\EditorUtil.h" />
     <ClInclude Include="editor\Hierarchy.h" />
     <ClInclude Include="editor\Inspector.h" />
     <ClInclude Include="editor\Panel.h" />

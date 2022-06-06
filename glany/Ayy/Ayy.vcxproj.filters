@@ -186,6 +186,12 @@
     <ClInclude Include="function\scene_management\SceneManageSystem.h">
       <Filter>function\scene_management</Filter>
     </ClInclude>
+    <ClInclude Include="editor\EditorUtil.h">
+      <Filter>editor</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\EditorEvent.h">
+      <Filter>editor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\ayy.cpp">
@@ -304,6 +310,12 @@
     </ClCompile>
     <ClCompile Include="function\scene_management\SceneManageSystem.cpp">
       <Filter>function\scene_management</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\EditorUtil.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\EditorEvent.cpp">
+      <Filter>editor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

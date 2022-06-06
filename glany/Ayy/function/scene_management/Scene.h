@@ -38,6 +38,8 @@ public:
 	}
 
 	std::map<EntityID, Entity*>& GetEntityMap() { return _entityMap; }
+
+	Entity* GetEntity(EntityID entityId);
 	
 protected:
 	EntityID AllocateEntityID();

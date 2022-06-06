@@ -13,6 +13,11 @@ void Editor::OnStart()
 {
 	_panels.push_back(new Hierarchy());
 	_panels.push_back(new Inspector());
+
+	for (auto it : _panels)
+	{
+		it->OnStart();
+	}
 }
 
 void Editor::OnUpdate()
@@ -29,6 +34,7 @@ void Editor::OnDestroy()
 {
 	for (auto it : _panels)
 	{
+		it->OnDestroy();
 		delete(it);
 	}
 	_panels.clear();

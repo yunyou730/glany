@@ -10,6 +10,8 @@ public:
 	Panel() {}
 	virtual ~Panel() {}
 	
+	virtual void OnStart() = 0;
+	virtual void OnDestroy() = 0;
 	virtual void OnGUI() = 0;
 };
 

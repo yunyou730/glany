@@ -60,4 +60,14 @@ void Scene::DestroyEntity(EntityID entityId)
 	}
 }
 
+Entity* Scene::GetEntity(EntityID entityId)
+{
+	auto it = _entityMap.find(entityId);
+	if (it != _entityMap.end())
+	{
+		return it->second;
+	}
+	return nullptr;
+}
+
 NS_AYY_END
