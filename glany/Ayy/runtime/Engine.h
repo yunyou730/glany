@@ -34,6 +34,7 @@ public:
 		
 public:
 	Scene* GetScene() { return _scene; }
+	Window* GetWindow() { return _window; }
 
 public:
 	MeshManager* GetMeshManager() { return _meshManager; }

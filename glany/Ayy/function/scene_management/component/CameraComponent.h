@@ -22,7 +22,7 @@ public:
 public:
 	CameraComponent(Entity* entity);
 
-	void Initialize(ECameraProjType projType,const glm::vec3& lookDir);
+	void Initialize(ECameraProjType projType,const glm::vec3& lookDir,float aspectWH);
 	
 	const glm::mat4& GetProjectionMatrix();
 
@@ -44,8 +44,17 @@ protected:
 	
 	unsigned int _layer = 0;
 	
+	// perspective
 	float	_fovy = 60.0f;
-	float	_aspect = 1.0f;
+	
+	// ortho
+	float	_top = 1.0f;
+	float	_bottom = -1.0f;
+	float	_left = -1.0f;
+	float	_right = 1.0f;
+	
+	// common
+	float	_aspectWH = 1.0f;	// width / height
 	float	_zNear = 0.01f;
 	float	_zFar = 1000.f;
 };

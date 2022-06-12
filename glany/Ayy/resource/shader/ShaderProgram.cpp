@@ -45,7 +45,7 @@ void ShaderProgram::SetUniformMatrix4x4(const std::string& uniform, const glm::m
 	}
 	else
 	{
-		Logger::Warning("uniform [%s] not found", uniform.c_str());
+		//Logger::Warning("uniform [%s] not found", uniform.c_str());
 	}
 }
 

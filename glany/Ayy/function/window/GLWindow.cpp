@@ -50,10 +50,11 @@ bool GLWindow::Initialize(const WindowCreateParam& windowCreateParam)
 		Logger::Error("Failed to create GLFW window");
 		return false;
 	}
-
 	Logger::Info("GLWindow::Initialize Success");
 	
 	glfwSetFramebufferSizeCallback(_glfwWindow,frameBufferSizeCallback);
+
+	OnWindowSizeChanged(windowCreateParam.size.x, windowCreateParam.size.y);
 	return true;
 }
 

@@ -40,6 +40,10 @@ namespace ayy
 		{
 			return _size;
 		}
+
+		float GetAspectWH() const {
+			return float(_size.x) / float(_size.y);
+		}
 	
 		virtual void OnWindowSizeChanged(float widht, float height) = 0;
 

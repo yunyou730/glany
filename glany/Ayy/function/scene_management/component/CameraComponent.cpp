@@ -16,22 +16,33 @@ CameraComponent::CameraComponent(Entity* entity)
 	_projMatrix = glm::mat4(1.0);
 }
 
-void CameraComponent::Initialize(ECameraProjType projType, const glm::vec3& lookDir)
+void CameraComponent::Initialize(ECameraProjType projType, const glm::vec3& lookDir,float aspectWH)
 {
 	_projType = projType;
 	_lookDir = lookDir;
+	_aspectWH = aspectWH;
 }
 
 const glm::mat4& CameraComponent::GetProjectionMatrix()
 {
+	CalcProjectionMatrix();
 	return _projMatrix;
 }
 
 void CameraComponent::CalcProjectionMatrix()
 {
 	// @miao temp only perspective
-	_projMatrix = glm::perspective(_fovy, _aspect, _zNear, _zFar);
-
+	switch (_projType)
+	{
+		case ECameraProjType::Persp:
+			_projMatrix = glm::perspective(_fovy, _aspectWH, _zNear, _zFar);
+			break;
+		case ECameraProjType::Ortho:
+			//_projMatrix = glm::ortho(_)
+			break;
+		default:
+			break;
+	}
 }
 
 NS_AYY_END

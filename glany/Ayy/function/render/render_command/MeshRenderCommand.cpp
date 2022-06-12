@@ -40,6 +40,7 @@ void MeshRenderCommand::Render()
 	shaderProgram->SetUniformMatrix4x4("u_Rotation", _transform->RotationMatrix());
 	shaderProgram->SetUniformMatrix4x4("u_Scale", _transform->ScaleMatrix());
 	shaderProgram->SetUniformMatrix4x4("u_View", CalcViewMatrix());
+	shaderProgram->SetUniformMatrix4x4("u_Projection", _camera->GetProjectionMatrix());
 
 	meshItem->Bind();
 	meshItem->DrawCall();

@@ -94,12 +94,11 @@ void SpriteTest()
 	TransformComponent* transform = entity->GetComponent<TransformComponent>();
 	transform->SetScale(0.2f);
 	transform->SetPosition(0, 0.5f, 0);
-
 	entity->AddComponent<MeshRenderComponent>()->Initialize("@quad","@test1");
 	
 	entity = scene->CreateEntity();
-	entity->AddComponent<CameraComponent>()->Initialize(ECameraProjType::Persp, glm::vec3(0,0,-1));
-	//entity->GetComponent<TransformComponent>()->
+	entity->AddComponent<CameraComponent>()->Initialize(ECameraProjType::Persp, glm::vec3(0,0,-1), Engine::Instance()->GetWindow()->GetAspectWH());
+	entity->GetComponent<TransformComponent>()->SetPosition(0, 0, 1);
 }
 
 void ModelTest()
