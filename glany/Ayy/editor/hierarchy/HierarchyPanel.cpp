@@ -1,4 +1,4 @@
-#include "Hierarchy.h"
+#include "HierarchyPanel.h"
 #include "imgui.h"
 
 #include "runtime/Engine.h"
@@ -10,17 +10,17 @@
 
 NS_AYY_EDITOR_BEGIN
 
-void Hierarchy::OnStart()
+void HierarchyPanel::OnStart()
 {
 
 }
 
-void Hierarchy::OnDestroy()
+void HierarchyPanel::OnDestroy()
 {
 
 }
 
-void Hierarchy::OnGUI()
+void HierarchyPanel::OnGUI()
 {
 	Scene* scene = Engine::Instance()->GetScene();
 	ImGui::Begin("Hierarchy");

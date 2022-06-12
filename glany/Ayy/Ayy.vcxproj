@@ -25,8 +25,11 @@
     <ClCompile Include="editor\Editor.cpp" />
     <ClCompile Include="editor\EditorEvent.cpp" />
     <ClCompile Include="editor\EditorUtil.cpp" />
-    <ClCompile Include="editor\Hierarchy.cpp" />
-    <ClCompile Include="editor\Inspector.cpp" />
+    <ClCompile Include="editor\hierarchy\HierarchyPanel.cpp" />
+    <ClCompile Include="editor\inspector\CameraInspector.cpp" />
+    <ClCompile Include="editor\inspector\ComponentInspector.cpp" />
+    <ClCompile Include="editor\inspector\InspectorPanel.cpp" />
+    <ClCompile Include="editor\inspector\TransformInspector.cpp" />
     <ClCompile Include="editor\Panel.cpp" />
     <ClCompile Include="function\event\Event.cpp" />
     <ClCompile Include="function\event\EventManager.cpp" />
@@ -68,8 +71,11 @@
     <ClInclude Include="editor\Editor.h" />
     <ClInclude Include="editor\EditorEvent.h" />
     <ClInclude Include="editor\EditorUtil.h" />
-    <ClInclude Include="editor\Hierarchy.h" />
-    <ClInclude Include="editor\Inspector.h" />
+    <ClInclude Include="editor\hierarchy\HierarchyPanel.h" />
+    <ClInclude Include="editor\inspector\CameraInspector.h" />
+    <ClInclude Include="editor\inspector\ComponentInspector.h" />
+    <ClInclude Include="editor\inspector\InspectorPanel.h" />
+    <ClInclude Include="editor\inspector\TransformInspector.h" />
     <ClInclude Include="editor\Panel.h" />
     <ClInclude Include="function\event\Event.h" />
     <ClInclude Include="function\event\EventManager.h" />

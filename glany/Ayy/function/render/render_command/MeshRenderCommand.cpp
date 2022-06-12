@@ -19,7 +19,6 @@
 #include <glm/ext/matrix_clip_space.hpp> // glm::perspective
 #include <glm/ext/scalar_constants.hpp> // glm::pi
 
-
 NS_AYY_BEGIN
 
 void MeshRenderCommand::Initialize(TransformComponent* transformComp, MeshRenderComponent* meshRender,CameraComponent* cameraComp)
@@ -35,7 +34,10 @@ void MeshRenderCommand::Render()
 	ShaderProgram* shaderProgram = Engine::Instance()->GetShaderManager()->GetShader(_meshRender->ShaderKey());
 
 	shaderProgram->Use();
-	shaderProgram->SetUniformMatrix4x4("u_Model", _transform->MVPMatrix());
+	shaderProgram->SetUniformMatrix4x4("u_Model", _transform->ModelMatrix());
+	shaderProgram->SetUniformMatrix4x4("u_Translation", _transform->TranslateMatrix());
+	shaderProgram->SetUniformMatrix4x4("u_Rotation", _transform->RotationMatrix());
+	shaderProgram->SetUniformMatrix4x4("u_Scale", _transform->ScaleMatrix());
 	shaderProgram->SetUniformMatrix4x4("u_View", CalcViewMatrix());
 
 	meshItem->Bind();

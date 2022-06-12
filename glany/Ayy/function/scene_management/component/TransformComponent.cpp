@@ -19,7 +19,7 @@ TransformComponent::TransformComponent(Entity* entity)
 	_translateMatrix = glm::mat4(1.0);
 	_rotationMatrix = glm::mat4(1.0);
 	_scaleMatrix = glm::mat4(1.0);
-	_mvpMatrix = glm::mat4(1.0);
+	_modelMatrix = glm::mat4(1.0);
 }
 
 const glm::mat4& TransformComponent::TranslateMatrix() 
@@ -52,14 +52,14 @@ const glm::mat4& TransformComponent::ScaleMatrix()
 	return _scaleMatrix;
 }
 
-const glm::mat4& TransformComponent::MVPMatrix()
+const glm::mat4& TransformComponent::ModelMatrix()
 {
 	//if (_bMatrixDirty)
 	//{
 	//	
 	//}
-	_mvpMatrix = TranslateMatrix() * RotationMatrix() * ScaleMatrix();
-	return _mvpMatrix;
+	_modelMatrix = TranslateMatrix() * RotationMatrix() * ScaleMatrix();
+	return _modelMatrix;
 
 }
 

@@ -37,7 +37,7 @@ public:
 	const glm::mat4& TranslateMatrix();
 	const glm::mat4& RotationMatrix();
 	const glm::mat4& ScaleMatrix();
-	const glm::mat4& MVPMatrix();
+	const glm::mat4& ModelMatrix();
 	
 protected:
 	glm::vec3 _pos;
@@ -48,7 +48,7 @@ protected:
 	glm::mat4 _translateMatrix;
 	glm::mat4 _rotationMatrix;
 	glm::mat4 _scaleMatrix;
-	glm::mat4 _mvpMatrix;
+	glm::mat4 _modelMatrix;
 
 
 	unsigned int _visibilityLayer = 0;

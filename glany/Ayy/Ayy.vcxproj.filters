@@ -67,6 +67,12 @@
     <Filter Include="function\event">
       <UniqueIdentifier>{3c2c4136-9a05-45fa-811d-38581138121c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="editor\inspector">
+      <UniqueIdentifier>{7cd82104-96c9-4a0f-bf4a-db2332142b22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="editor\hierarchy">
+      <UniqueIdentifier>{ca7a56e6-d0b8-4c49-a4c4-0875a3b66d57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\data_type.h">
@@ -168,13 +174,7 @@
     <ClInclude Include="editor\Editor.h">
       <Filter>editor</Filter>
     </ClInclude>
-    <ClInclude Include="editor\Hierarchy.h">
-      <Filter>editor</Filter>
-    </ClInclude>
     <ClInclude Include="editor\Panel.h">
-      <Filter>editor</Filter>
-    </ClInclude>
-    <ClInclude Include="editor\Inspector.h">
       <Filter>editor</Filter>
     </ClInclude>
     <ClInclude Include="function\event\EventManager.h">
@@ -191,6 +191,21 @@
     </ClInclude>
     <ClInclude Include="editor\EditorEvent.h">
       <Filter>editor</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\hierarchy\HierarchyPanel.h">
+      <Filter>editor\hierarchy</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\inspector\InspectorPanel.h">
+      <Filter>editor\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\inspector\TransformInspector.h">
+      <Filter>editor\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\inspector\ComponentInspector.h">
+      <Filter>editor\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\inspector\CameraInspector.h">
+      <Filter>editor\inspector</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -293,13 +308,7 @@
     <ClCompile Include="editor\Editor.cpp">
       <Filter>editor</Filter>
     </ClCompile>
-    <ClCompile Include="editor\Hierarchy.cpp">
-      <Filter>editor</Filter>
-    </ClCompile>
     <ClCompile Include="editor\Panel.cpp">
-      <Filter>editor</Filter>
-    </ClCompile>
-    <ClCompile Include="editor\Inspector.cpp">
       <Filter>editor</Filter>
     </ClCompile>
     <ClCompile Include="function\event\EventManager.cpp">
@@ -316,6 +325,21 @@
     </ClCompile>
     <ClCompile Include="editor\EditorEvent.cpp">
       <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\hierarchy\HierarchyPanel.cpp">
+      <Filter>editor\hierarchy</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\inspector\InspectorPanel.cpp">
+      <Filter>editor\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\inspector\TransformInspector.cpp">
+      <Filter>editor\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\inspector\ComponentInspector.cpp">
+      <Filter>editor\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\inspector\CameraInspector.cpp">
+      <Filter>editor\inspector</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

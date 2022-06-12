@@ -1,8 +1,8 @@
 #include "Editor.h"
 #include "imgui.h"
 
-#include "Hierarchy.h"
-#include "Inspector.h"
+#include "hierarchy/HierarchyPanel.h"
+#include "inspector/InspectorPanel.h"
 
 #include "runtime/Engine.h"
 #include "function/scene_management/Scene.h"
@@ -11,8 +11,8 @@ NS_AYY_EDITOR_BEGIN
 
 void Editor::OnStart()
 {
-	_panels.push_back(new Hierarchy());
-	_panels.push_back(new Inspector());
+	_panels.push_back(new HierarchyPanel());
+	_panels.push_back(new InspectorPanel());
 
 	for (auto it : _panels)
 	{
