@@ -27,4 +27,11 @@ const glm::mat4& CameraComponent::GetProjectionMatrix()
 	return _projMatrix;
 }
 
+void CameraComponent::CalcProjectionMatrix()
+{
+	// @miao temp only perspective
+	_projMatrix = glm::perspective(_fovy, _aspect, _zNear, _zFar);
+
+}
+
 NS_AYY_END

@@ -8,6 +8,7 @@
 #include "runtime/Engine.h"
 #include <cassert>
 
+#include "function/scene_management/entity/Entity.h"
 #include "function/scene_management/component/TransformComponent.h"
 #include "function/scene_management/component/MeshRenderComponent.h"
 #include "function/scene_management/component/CameraComponent.h"
@@ -48,8 +49,9 @@ void MeshRenderCommand::Render()
 
 glm::mat4 MeshRenderCommand::CalcViewMatrix()
 {
-	glm::vec3 lookCenter = _transform->GetPosition() + glm::normalize(_camera->GetLookDir());
-	glm::mat4 viewMatrix = glm::lookAt(_transform->GetPosition(), lookCenter, glm::vec3(0, 1, 0));	
+	auto cameraTransform = _camera->GetEntity()->GetComponent<TransformComponent>();
+	glm::vec3 lookCenter = cameraTransform->GetPosition() + glm::normalize(_camera->GetLookDir());
+	glm::mat4 viewMatrix = glm::lookAt(cameraTransform->GetPosition(), lookCenter, glm::vec3(0, 1, 0));
 	return viewMatrix;
 }
 

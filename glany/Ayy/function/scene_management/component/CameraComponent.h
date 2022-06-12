@@ -30,6 +30,8 @@ public:
 
 	glm::vec3 GetLookDir() { return _lookDir; }
 
+	ECameraProjType ProjType() const { return _projType; }
+
 protected:
 	void CalcProjectionMatrix();
 
@@ -41,6 +43,11 @@ protected:
 	glm::mat4	_projMatrix;
 	
 	unsigned int _layer = 0;
+	
+	float	_fovy = 60.0f;
+	float	_aspect = 1.0f;
+	float	_zNear = 0.01f;
+	float	_zFar = 1000.f;
 };
 
 NS_AYY_END

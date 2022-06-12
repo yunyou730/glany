@@ -1,8 +1,6 @@
 #include "CameraInspector.h"
 #include "imgui.h"
 
-#include "function/scene_management/component/CameraComponent.h"
-
 NS_AYY_EDITOR_BEGIN
 
 bool CameraInspector::ShouldDisplayDetail()
@@ -17,12 +15,7 @@ void CameraInspector::SwitchEntity(Entity* entity)
 	{
 		CameraComponent* camera = GetEntity()->GetComponent<CameraComponent>();
 
-		//_pos[0] = transform->GetPosition().x;
-		//_pos[1] = transform->GetPosition().y;
-		//_pos[2] = transform->GetPosition().z;
-
-		//_rot = transform->GetRotation();
-		//_scale = transform->GetScale();
+		//camera->GetProjectionMatrix();
 	}
 }
 
