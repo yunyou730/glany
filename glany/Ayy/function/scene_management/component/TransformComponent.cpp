@@ -24,43 +24,29 @@ TransformComponent::TransformComponent(Entity* entity)
 
 const glm::mat4& TransformComponent::TranslateMatrix() 
 {
-	//if (_bMatrixDirty)
-	//{
-		_translateMatrix = glm::translate(glm::mat4(1.0), _pos);
-	//}
+	_translateMatrix = glm::translate(glm::mat4(1.0), _pos);
 	return _translateMatrix;
 }
 
 const glm::mat4& TransformComponent::RotationMatrix()
 {
-	//if (_bMatrixDirty)
-	//{
-		_rotationMatrix = glm::mat4(1.0);
-		_rotationMatrix = glm::rotate(_rotationMatrix, _rotationEachAxis.x, glm::vec3(1.0f, 0.0f, 0.0f));
-		_rotationMatrix = glm::rotate(_rotationMatrix, _rotationEachAxis.y, glm::vec3(0.0f, 1.0f, 0.0f));
-		_rotationMatrix = glm::rotate(_rotationMatrix, _rotationEachAxis.z, glm::vec3(0.0f, 0.0f, 1.0f));
-	//}
+	_rotationMatrix = glm::mat4(1.0);
+	_rotationMatrix = glm::rotate(_rotationMatrix, _rotationEachAxis.x, glm::vec3(1.0f, 0.0f, 0.0f));
+	_rotationMatrix = glm::rotate(_rotationMatrix, _rotationEachAxis.y, glm::vec3(0.0f, 1.0f, 0.0f));
+	_rotationMatrix = glm::rotate(_rotationMatrix, _rotationEachAxis.z, glm::vec3(0.0f, 0.0f, 1.0f));
 	return _rotationMatrix;
 }
 
 const glm::mat4& TransformComponent::ScaleMatrix()
 {
-	//if (_bMatrixDirty)
-	//{
-		_scaleMatrix = glm::scale(glm::mat4(1.0), _scale);
-	//}
+	_scaleMatrix = glm::scale(glm::mat4(1.0), _scale);
 	return _scaleMatrix;
 }
 
 const glm::mat4& TransformComponent::ModelMatrix()
 {
-	//if (_bMatrixDirty)
-	//{
-	//	
-	//}
 	_modelMatrix = TranslateMatrix() * RotationMatrix() * ScaleMatrix();
 	return _modelMatrix;
-
 }
 
 NS_AYY_END
