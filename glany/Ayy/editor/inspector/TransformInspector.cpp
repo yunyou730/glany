@@ -3,8 +3,17 @@
 
 #include "function/scene_management/component/TransformComponent.h"
 
-static const float kMin = -1.0f;
-static const float kMax = 1.0f;
+#include <glm/glm.hpp>
+#include <glm/ext.hpp>
+
+static const float kPosMin = -1.0f;
+static const float kPosMax = 1.0f;
+
+static const float kRotMin = 0.0f;
+static const float kRotMax = 3.1415;
+
+static const float kScaleMin = -3.0f;
+static const float kScaleMax = 3.0f;
 
 NS_AYY_EDITOR_BEGIN
 
@@ -20,10 +29,7 @@ void TransformInspector::SwitchEntity(Entity* entity)
 	{
 		TransformComponent* transform = GetEntity()->GetComponent<TransformComponent>();
 
-		_pos[0] = transform->GetPosition().x;
-		_pos[1] = transform->GetPosition().y;
-		_pos[2] = transform->GetPosition().z;
-
+		_pos = transform->GetPosition();
 		_rot = transform->GetRotation();
 		_scale = transform->GetScale();
 	}
@@ -32,13 +38,16 @@ void TransformInspector::SwitchEntity(Entity* entity)
 void TransformInspector::OnGUI()
 {
 	TransformComponent* transform = GetEntity()->GetComponent<TransformComponent>();
-
 	if (ImGui::CollapsingHeader("TransformComponent"))
 	{
-		ImGui::SliderFloat3("pos", &_pos[0], kMin, kMax);
-		transform->SetPosition(_pos[0], _pos[1], _pos[2]);
+		ImGui::SliderFloat3("pos", glm::value_ptr(_pos), kPosMin, kPosMax);
+		ImGui::SliderFloat3("rot", glm::value_ptr(_rot), kRotMin, kRotMax);
+		ImGui::SliderFloat3("scale",glm::value_ptr(_scale),kScaleMin,kScaleMax);
+		
+		transform->SetPosition(_pos);
+		transform->SetRotation(_rot);
+		transform->SetScale(_scale);
 	}
-	//transform->SetPosition()
 }
 
 

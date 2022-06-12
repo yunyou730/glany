@@ -17,8 +17,7 @@ public:
 	virtual void SwitchEntity(Entity* entity) override;
 
 protected:
-	//glm::vec3	_pos;
-	float	_pos[3];
+	glm::vec3	_pos;
 	glm::vec3	_rot;
 	glm::vec3	_scale;
 };

@@ -6,7 +6,6 @@
 #include <glm/glm.hpp>
 #include <glm/ext.hpp>
 
-
 NS_AYY_BEGIN
 
 ShaderProgram::ShaderProgram(unsigned int program, const std::string& vsCode, const std::string& fsCode)
