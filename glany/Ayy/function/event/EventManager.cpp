@@ -60,6 +60,11 @@ void EventManager::UnRegister(const std::string& eventName, std::function<void(E
 	}
 }
 
+void EventManager::DispatchEvent(Event* eventItem)
+{
+	DispatchEvent<Event>(eventItem);
+}
+
 // Each event, to call each listener func
 void EventManager::DoDispatch()
 {

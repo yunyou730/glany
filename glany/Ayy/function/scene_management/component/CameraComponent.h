@@ -23,17 +23,40 @@ public:
 	CameraComponent(Entity* entity);
 
 	void Initialize(ECameraProjType projType,const glm::vec3& lookDir,float aspectWH);
-	
 	const glm::mat4& GetProjectionMatrix();
-
 	const unsigned int GetLayer() const { return _layer; }
 
+
+public:
 	glm::vec3 GetLookDir() { return _lookDir; }
 
-	ECameraProjType ProjType() const { return _projType; }
+	ECameraProjType GetProjType() const { return _projType; }
+	void SetProjType(ECameraProjType projType) { _projType = projType; }
+
+	void GetOrthoScope(float& top, float& bottom, float& left, float& right) {
+		top = _top; bottom = _bottom; left = _left; right = _right;
+	}
+	void SetOrthoScope(float orthoHeightRange);
+
+	float GetFovy() const { return _fovy; }
+	void SetFovy(float fovy) { _fovy = fovy; }
+
+	void GetNearFar(float& zNear, float& zFar) {
+		zNear = _zNear;
+		zFar = _zFar;
+	}
+
+	void SetNearFar(float zNear,float zFar)
+	{
+		_zNear = zNear;
+		_zFar = zFar;
+	}
+	
+	void SetAspectWH(float aspectWH);
 
 protected:
 	void CalcProjectionMatrix();
+	void UpdateOrthoScope();
 
 protected:
 	glm::vec3	_lookDir;

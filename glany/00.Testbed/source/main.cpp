@@ -1,8 +1,8 @@
 #include <cstdio>
 
 #include "runtime/ayy.h"
-#include "runtime/EngineLaunchParam.h"
-#include "runtime/Engine.h"
+#include "engine/EngineLaunchParam.h"
+#include "engine/Engine.h"
 
 #include "Testbed.h"
 

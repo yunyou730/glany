@@ -34,6 +34,8 @@ public:
 		}
 	}
 
+	void DispatchEvent(Event* eventItem);
+
 	void Register(const std::string& eventName, std::function<void(Event*)>* func);
 	void UnRegister(const std::string& eventName, std::function<void(Event*)>* func);
 	

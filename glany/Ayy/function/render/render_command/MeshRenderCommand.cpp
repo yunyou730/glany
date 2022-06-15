@@ -5,7 +5,7 @@
 #include "resource/mesh/MeshItem.h"
 #include "resource/shader/ShaderProgram.h"
 
-#include "runtime/Engine.h"
+#include "engine/Engine.h"
 #include <cassert>
 
 #include "function/scene_management/entity/Entity.h"
@@ -19,6 +19,8 @@
 #include <glm/ext/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale
 #include <glm/ext/matrix_clip_space.hpp> // glm::perspective
 #include <glm/ext/scalar_constants.hpp> // glm::pi
+
+static const glm::vec3 kUp = glm::vec3(0, 1, 0);
 
 NS_AYY_BEGIN
 
@@ -52,7 +54,7 @@ glm::mat4 MeshRenderCommand::CalcViewMatrix()
 {
 	auto cameraTransform = _camera->GetEntity()->GetComponent<TransformComponent>();
 	glm::vec3 lookCenter = cameraTransform->GetPosition() + glm::normalize(_camera->GetLookDir());
-	glm::mat4 viewMatrix = glm::lookAt(cameraTransform->GetPosition(), lookCenter, glm::vec3(0, 1, 0));
+	glm::mat4 viewMatrix = glm::lookAt(cameraTransform->GetPosition(), lookCenter, kUp);
 	return viewMatrix;
 }
 

@@ -30,4 +30,18 @@ public:
 };
 
 
+class WindowSizeChangedEvent : public Event
+{
+public:
+	WindowSizeChangedEvent(const int newWidth, const int newHeight)
+		:_width(newWidth)
+		,_height(newHeight)
+	{
+		
+	}
+	
+	int _width = 0;
+	int _height = 0;
+};
+
 NS_AYY_END

@@ -1,5 +1,8 @@
 #include "GLWindow.h"
 #include "function/log/Logger.h"
+#include "function/event/Event.h"
+#include "function/event/EventManager.h"
+#include "engine/Engine.h"
 #include <functional>
 
 NS_AYY_BEGIN
@@ -82,10 +85,12 @@ void GLWindow::FrameEnd()
 	glfwPollEvents();
 }
 
-void GLWindow::OnWindowSizeChanged(float widht, float height)
+void GLWindow::OnWindowSizeChanged(float width, float height)
 {
-	glViewport(0, 0, widht, height);
-	_size = ayy::Dimension2f(widht, height);
+	glViewport(0, 0, width, height);
+	_size = ayy::Dimension2f(width, height);
+	
+	Engine::Instance()->GetEventManager()->DispatchEvent(new WindowSizeChangedEvent(width,height));
 }
 
 NS_AYY_END

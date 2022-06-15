@@ -6,9 +6,11 @@
 
 #include <map>
 #include <vector>
+#include <functional>
 
 NS_AYY_BEGIN
 
+class Event;
 class Scene
 {
 public:
@@ -43,11 +45,14 @@ public:
 	
 protected:
 	EntityID AllocateEntityID();
+	void OnWindowSizeChanged(Event* eventItem);
 
 protected:
 	std::map<EntityID, Entity*> _entityMap;
 
 	EntityID	_entityIdSeed = 0;
+
+	std::function<void(Event*)> _windowSizeChangedCallback = nullptr;
 };
 
 NS_AYY_END

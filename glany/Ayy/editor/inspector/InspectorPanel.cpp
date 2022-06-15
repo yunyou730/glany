@@ -8,7 +8,7 @@
 #include "editor/EditorUtil.h"
 #include "editor/EditorEvent.h"
 
-#include "runtime/Engine.h"
+#include "engine/Engine.h"
 
 #include "editor/inspector/TransformInspector.h"
 #include "editor/inspector/CameraInspector.h"

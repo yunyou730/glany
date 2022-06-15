@@ -73,6 +73,9 @@
     <Filter Include="editor\hierarchy">
       <UniqueIdentifier>{ca7a56e6-d0b8-4c49-a4c4-0875a3b66d57}</UniqueIdentifier>
     </Filter>
+    <Filter Include="engine">
+      <UniqueIdentifier>{abeb6358-0d4d-420f-b12d-f11b7f40a572}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\data_type.h">
@@ -85,9 +88,6 @@
       <Filter>function\Log</Filter>
     </ClInclude>
     <ClInclude Include="runtime\ayy.h">
-      <Filter>runtime</Filter>
-    </ClInclude>
-    <ClInclude Include="runtime\Engine.h">
       <Filter>runtime</Filter>
     </ClInclude>
     <ClInclude Include="runtime\Application.h">
@@ -104,9 +104,6 @@
     </ClInclude>
     <ClInclude Include="function\render\RenderState.h">
       <Filter>function\render</Filter>
-    </ClInclude>
-    <ClInclude Include="runtime\EngineLaunchParam.h">
-      <Filter>runtime</Filter>
     </ClInclude>
     <ClInclude Include="function\render\rhi\rhi.h">
       <Filter>function\render\rhi</Filter>
@@ -207,6 +204,12 @@
     <ClInclude Include="editor\inspector\CameraInspector.h">
       <Filter>editor\inspector</Filter>
     </ClInclude>
+    <ClInclude Include="engine\Engine.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\EngineLaunchParam.h">
+      <Filter>engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\ayy.cpp">
@@ -216,9 +219,6 @@
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="runtime\Application.cpp">
-      <Filter>runtime</Filter>
-    </ClCompile>
-    <ClCompile Include="runtime\Engine.cpp">
       <Filter>runtime</Filter>
     </ClCompile>
     <ClCompile Include="core\util_func.cpp">
@@ -238,9 +238,6 @@
     </ClCompile>
     <ClCompile Include="function\render\RenderState.cpp">
       <Filter>function\render</Filter>
-    </ClCompile>
-    <ClCompile Include="runtime\EngineLaunchParam.cpp">
-      <Filter>runtime</Filter>
     </ClCompile>
     <ClCompile Include="function\render\rhi\rhi.cpp">
       <Filter>function\render\rhi</Filter>
@@ -340,6 +337,12 @@
     </ClCompile>
     <ClCompile Include="editor\inspector\CameraInspector.cpp">
       <Filter>editor\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Engine.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\EngineLaunchParam.cpp">
+      <Filter>engine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

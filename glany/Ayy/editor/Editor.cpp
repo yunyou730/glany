@@ -4,7 +4,7 @@
 #include "hierarchy/HierarchyPanel.h"
 #include "inspector/InspectorPanel.h"
 
-#include "runtime/Engine.h"
+#include "engine/Engine.h"
 #include "function/scene_management/Scene.h"
 
 NS_AYY_EDITOR_BEGIN

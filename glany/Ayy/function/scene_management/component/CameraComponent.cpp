@@ -20,7 +20,27 @@ void CameraComponent::Initialize(ECameraProjType projType, const glm::vec3& look
 {
 	_projType = projType;
 	_lookDir = lookDir;
+	SetAspectWH(aspectWH);
+}
+
+void CameraComponent::SetAspectWH(float aspectWH)
+{
 	_aspectWH = aspectWH;
+	UpdateOrthoScope();
+}
+
+void CameraComponent::UpdateOrthoScope()
+{
+	float width = _aspectWH * (_top - _bottom);
+	_left = -width * 0.5f;
+	_right = width * 0.5f;
+}
+
+void CameraComponent::SetOrthoScope(float orthoHeightRange)
+{
+	_top = orthoHeightRange * 0.5f;
+	_bottom = -_top;
+	UpdateOrthoScope();
 }
 
 const glm::mat4& CameraComponent::GetProjectionMatrix()
@@ -31,14 +51,13 @@ const glm::mat4& CameraComponent::GetProjectionMatrix()
 
 void CameraComponent::CalcProjectionMatrix()
 {
-	// @miao temp only perspective
 	switch (_projType)
 	{
 		case ECameraProjType::Persp:
-			_projMatrix = glm::perspective(_fovy, _aspectWH, _zNear, _zFar);
+			_projMatrix = glm::perspective(glm::radians(_fovy), _aspectWH, _zNear, _zFar);
 			break;
 		case ECameraProjType::Ortho:
-			//_projMatrix = glm::ortho(_)
+			_projMatrix = glm::ortho(_left, _right, _bottom, _top);
 			break;
 		default:
 			break;

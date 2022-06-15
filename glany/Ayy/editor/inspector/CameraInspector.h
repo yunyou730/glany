@@ -18,9 +18,18 @@ public:
 	virtual void SwitchEntity(Entity* entity) override;
 
 protected:
-	ECameraProjType		_projType;
+	ECameraProjType GetProjTypeWithIndex(const int index);
+
+protected:
+	//ECameraProjType		_projType;
+	int _projTypeSelIndex = 0;
+
+	float _orthoHeightRange;
+	float _bottom, _top, _left, _right;
+
+	float _fovy;
+	float _zNear, _zFar;
+
 };
 
 NS_AYY_EDITOR_END
-
-
