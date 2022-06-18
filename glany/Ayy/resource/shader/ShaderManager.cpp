@@ -4,6 +4,8 @@
 #include "function/io/FileReader.h"
 #include "function/log/Logger.h"
 
+#include "resource/BuiltinResDict.h"
+
 #include <glad/glad.h>
 #include <cassert>
 
@@ -31,7 +33,7 @@ void ShaderManager::Deinitialize()
 
 void ShaderManager::CreateBuiltinShaders()
 {
-	_cache.insert(std::make_pair("@test1", CreateShader("./builtin_assets/shaders/test1.vs", "./builtin_assets/shaders/test1.fs")));
+	_cache.insert(std::make_pair(BuiltinProgram::kTest1, CreateShader("./builtin_assets/shaders/test1.vs", "./builtin_assets/shaders/test1.fs")));
 }
 
 ShaderProgram* ShaderManager::GetShader(const std::string& key)

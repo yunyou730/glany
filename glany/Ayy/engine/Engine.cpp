@@ -6,8 +6,10 @@
 #include "function/scene_management/Scene.h"
 #include "function/render/RenderSystem.h"
 #include "function/imgui/GUISystem.h"
-#include "function/event/EventManager.h"
 #include "function/scene_management/SceneManageSystem.h"
+
+#include "function/event/EventManager.h"
+#include "function/render/material/MaterialManager.h"
 
 #include "resource/mesh/MeshManager.h"
 #include "resource/shader/ShaderManager.h"
@@ -35,6 +37,7 @@ Engine::Engine()
 	_textureManager = new TextureManager();
 	_editor = new fancy::Editor();
 	_eventManager = new EventManager();
+	_materialManager = new MaterialManager();
 }
 	
 Engine::~Engine()
@@ -43,6 +46,7 @@ Engine::~Engine()
 	SAFE_DEL(_shaderManager);
 	SAFE_DEL(_textureManager);
 	SAFE_DEL(_eventManager);
+	SAFE_DEL(_materialManager);
 
 	SAFE_DEL(_sceneManageSystem);
 	SAFE_DEL(_renderSystem);
@@ -68,6 +72,8 @@ void Engine::Initialize(const EngineLaunchParam& launchParam,Application* app)
 	_shaderManager->Initialize();
 	_textureManager->Initialize();
 
+	_materialManager->Initialize();
+
 	_app->OnStart();
 }
 
@@ -80,6 +86,8 @@ void Engine::Deinitialize()
 	_window->Deinitialize();
 	_sceneManageSystem->Deinitialize();
 	_scene->Deinitialize();
+
+	_materialManager->Deinitialize();
 
 	_meshManager->Deinitialize();
 	_shaderManager->Deinitialize();

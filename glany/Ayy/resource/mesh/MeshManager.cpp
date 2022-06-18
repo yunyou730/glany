@@ -3,6 +3,8 @@
 #include <glad/glad.h>
 #include "MeshProductor.h"
 
+#include "resource/BuiltinResDict.h"
+
 NS_AYY_BEGIN
 MeshManager::MeshManager()
 {
@@ -47,7 +49,7 @@ MeshItem* MeshManager::GetFromCache(const std::string& key)
 
 void MeshManager::LoadBuiltin()
 {
-	AddCache("@quad", MeshProductor::CreateQuad());
+	AddCache(BuiltinMesh::kQuad, MeshProductor::CreateQuad());
 }
 
 

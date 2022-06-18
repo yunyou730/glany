@@ -76,6 +76,9 @@
     <Filter Include="engine">
       <UniqueIdentifier>{abeb6358-0d4d-420f-b12d-f11b7f40a572}</UniqueIdentifier>
     </Filter>
+    <Filter Include="function\render\material">
+      <UniqueIdentifier>{8a45e12a-f91c-48d7-8e15-b294e66c81f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\data_type.h">
@@ -210,6 +213,21 @@
     <ClInclude Include="engine\EngineLaunchParam.h">
       <Filter>engine</Filter>
     </ClInclude>
+    <ClInclude Include="function\render\material\Material.h">
+      <Filter>function\render\material</Filter>
+    </ClInclude>
+    <ClInclude Include="function\render\material\RenderPass.h">
+      <Filter>function\render\material</Filter>
+    </ClInclude>
+    <ClInclude Include="function\render\material\MaterialManager.h">
+      <Filter>function\render\material</Filter>
+    </ClInclude>
+    <ClInclude Include="function\scene_management\component\MeshFilterComponent.h">
+      <Filter>function\scene_management\component</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\BuiltinResDict.h">
+      <Filter>resource</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\ayy.cpp">
@@ -343,6 +361,24 @@
     </ClCompile>
     <ClCompile Include="engine\EngineLaunchParam.cpp">
       <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="function\render\material\Material.cpp">
+      <Filter>function\render\material</Filter>
+    </ClCompile>
+    <ClCompile Include="function\render\material\RenderPass.cpp">
+      <Filter>function\render\material</Filter>
+    </ClCompile>
+    <ClCompile Include="function\render\material\MaterialManager.cpp">
+      <Filter>function\render\material</Filter>
+    </ClCompile>
+    <ClCompile Include="test\windowtest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="function\scene_management\component\MeshFilterComponent.cpp">
+      <Filter>function\scene_management\component</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\BuiltinResDict.cpp">
+      <Filter>resource</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

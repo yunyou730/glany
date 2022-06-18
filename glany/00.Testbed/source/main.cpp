@@ -15,6 +15,9 @@ int main()
 	engine.Initialize(launchParam,&testbed);
 	engine.Run();
 	engine.Deinitialize();
+
+
+	//ayy::WindowTest();
 	
 	return 0;
 }

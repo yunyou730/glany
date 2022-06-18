@@ -19,20 +19,16 @@ public:
 	MeshRenderComponent(Entity* entity);
 	~MeshRenderComponent();
 
-	void Initialize(const std::string& meshKey, const std::string& shaderKey);
+	void Initialize(const std::string& materialKey);
 	void Deinitialize();
-
-	std::string MeshKey() const { return _meshKey; }
-	std::string ShaderKey() const { return _shaderKey; }
-
-protected:
-	void SetMesh(const std::string& meshKey);
-	void SetShader(const std::string& shaderKey);
+	
+	std::string GetMaterialKey() const { return _materialKey; }
 
 protected:
-	std::string _meshKey;
-	std::string _shaderKey;
+	void SetMaterial(const std::string& materialKey);
 
+protected:
+	std::string _materialKey;
 };
 
 NS_AYY_END

@@ -11,6 +11,7 @@
 #include "core/util_func.h"
 
 #include "function/scene_management/component/MeshRenderComponent.h"
+#include "function/scene_management/component/MeshFilterComponent.h"
 #include "function/scene_management/component/TransformComponent.h"
 #include "function/scene_management/component/CameraComponent.h"
 
@@ -19,52 +20,10 @@
 
 #include "core/math_util.h"
 
+#include "resource/BuiltinResDict.h"
+
 namespace ayy
 {
-void WindowTest()
-{
-	std::cout << "ayy:TestFunc3" << std::endl;
-
-	//glfwCreateWindow(100, 100, "", nullptr, nullptr);
-	std::cout << "ayy:TestFunc5" << std::endl;
-
-
-	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	
-	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-
-	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
-	if (window == NULL)
-	{
-		std::cout << "Failed to create GLFW window" << std::endl;
-		glfwTerminate();
-		//return -1;
-
-		return;
-	}
-	glfwMakeContextCurrent(window);
-
-
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-	{
-		std::cout << "Failed to initialize GLAD" << std::endl;
-		return;
-	}
-
-	
-	glClearColor(0.5f, 0.7f, 0.3f, 1.0f);
-	while (!glfwWindowShouldClose(window))
-	{
-		glClear(GL_COLOR_BUFFER_BIT);
-		glfwSwapBuffers(window);
-		glfwPollEvents();
-	}
-
-	glfwTerminate();
-}
 
 void MathTest(float Translate, glm::vec2 const& Rotate)
 {
@@ -94,8 +53,9 @@ void SpriteTest()
 	TransformComponent* transform = entity->GetComponent<TransformComponent>();
 	transform->SetScale(0.2f);
 	transform->SetPosition(0, 0, 0);
-	entity->AddComponent<MeshRenderComponent>()->Initialize("@quad","@test1");
-	
+	entity->AddComponent<MeshFilterComponent>()->Initialize(BuiltinMesh::kQuad);
+	entity->AddComponent<MeshRenderComponent>()->Initialize(BuiltinMaterial::kNormal);
+
 	entity = scene->CreateEntity();
 	entity->AddComponent<CameraComponent>()->Initialize(ECameraProjType::Persp, glm::vec3(0,0,-1), Engine::Instance()->GetWindow()->GetAspectWH());
 	entity->GetComponent<TransformComponent>()->SetPosition(0, 0, 1);

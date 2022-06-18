@@ -10,8 +10,13 @@
 
 #include "function/scene_management/entity/Entity.h"
 #include "function/scene_management/component/TransformComponent.h"
+#include "function/scene_management/component/MeshFilterComponent.h"
 #include "function/scene_management/component/MeshRenderComponent.h"
 #include "function/scene_management/component/CameraComponent.h"
+
+#include "function/render/material/Material.h"
+#include "function/render/material/RenderPass.h"
+#include "function/render/material/MaterialManager.h"
 
 #include <glm/vec3.hpp> // glm::vec3
 #include <glm/vec4.hpp> // glm::vec4
@@ -24,17 +29,30 @@ static const glm::vec3 kUp = glm::vec3(0, 1, 0);
 
 NS_AYY_BEGIN
 
-void MeshRenderCommand::Initialize(TransformComponent* transformComp, MeshRenderComponent* meshRender,CameraComponent* cameraComp)
+void MeshRenderCommand::Initialize(TransformComponent* transformComp, MeshFilterComponent* meshFilter, MeshRenderComponent* meshRender, CameraComponent* cameraComp)
 {
 	_transform = transformComp;
+	_meshFilter = meshFilter;
 	_meshRender = meshRender;
 	_camera = cameraComp;
 }
 
 void MeshRenderCommand::Render()
 {
-	MeshItem* meshItem = Engine::Instance()->GetMeshManager()->GetFromCache(_meshRender->MeshKey());
-	ShaderProgram* shaderProgram = Engine::Instance()->GetShaderManager()->GetShader(_meshRender->ShaderKey());
+	MeshItem* meshItem = Engine::Instance()->GetMeshManager()->GetFromCache(_meshFilter->GetMeshKey());
+	Material* material = Engine::Instance()->GetMaterialManager()->GetMaterial(_meshRender->GetMaterialKey());
+
+	std::vector<RenderPass*> passes = material->GetPasses();
+	for (auto it : passes)
+	{
+		RenderPass* pass = it;
+		RenderOnePass(meshItem,pass);
+	}
+}
+
+void MeshRenderCommand::RenderOnePass(MeshItem* meshItem, RenderPass* pass)
+{
+	ShaderProgram* shaderProgram = Engine::Instance()->GetShaderManager()->GetShader(pass->GetProgramKey());
 
 	shaderProgram->Use();
 	shaderProgram->SetUniformMatrix4x4("u_Model", _transform->ModelMatrix());

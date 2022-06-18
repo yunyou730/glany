@@ -14,10 +14,9 @@ MeshRenderComponent::~MeshRenderComponent()
 	
 }
 
-void MeshRenderComponent::Initialize(const std::string& meshKey, const std::string& shaderKey)
+void MeshRenderComponent::Initialize(const std::string& materialKey)
 {
-	SetMesh(meshKey);
-	SetShader(shaderKey);
+	SetMaterial(materialKey);
 }
 
 void MeshRenderComponent::Deinitialize()
@@ -25,14 +24,9 @@ void MeshRenderComponent::Deinitialize()
 
 }
 
-void MeshRenderComponent::SetMesh(const std::string& meshKey)
+void MeshRenderComponent::SetMaterial(const std::string& materialKey)
 {
-	_meshKey = meshKey;
-}
-
-void MeshRenderComponent::SetShader(const std::string& shaderKey)
-{
-	_shaderKey = shaderKey;
+	_materialKey = materialKey;
 }
 
 NS_AYY_END

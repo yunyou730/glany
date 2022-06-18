@@ -7,6 +7,7 @@
 
 #include "function/scene_management/Scene.h"
 #include "function/scene_management/component/TransformComponent.h"
+#include "function/scene_management/component/MeshFilterComponent.h"
 #include "function/scene_management/component/MeshRenderComponent.h"
 #include "function/scene_management/component/CameraComponent.h"
 
@@ -87,7 +88,7 @@ void RenderSystem::BuildRenderCommandList()
 	}
 
 	// collect all render components
-	std::vector<Entity*> entities = _scene->QueryEntity<TransformComponent,MeshRenderComponent>();
+	std::vector<Entity*> entities = _scene->QueryEntity<TransformComponent,MeshFilterComponent,MeshRenderComponent>();
 	for (auto it : entities)
 	{
 		Entity* entity = it;
@@ -101,7 +102,10 @@ void RenderSystem::BuildRenderCommandList()
 			for (int camIndex = 0; camIndex < camIt->second.size();camIndex++)
 			{
 				MeshRenderCommand* renderCommand = new MeshRenderCommand();
-				renderCommand->Initialize(entity->GetComponent<TransformComponent>() ,entity->GetComponent<MeshRenderComponent>(), camIt->second[camIndex]);
+				renderCommand->Initialize(entity->GetComponent<TransformComponent>(),
+											entity->GetComponent<MeshFilterComponent>(),
+											entity->GetComponent<MeshRenderComponent>(),
+											camIt->second[camIndex]);
 				_commandList.push_back(renderCommand);
 			}
 		}

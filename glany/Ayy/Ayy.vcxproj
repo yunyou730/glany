@@ -38,6 +38,9 @@
     <ClCompile Include="function\imgui\GUISystem.cpp" />
     <ClCompile Include="function\io\FileReader.cpp" />
     <ClCompile Include="function\log\Logger.cpp" />
+    <ClCompile Include="function\render\material\Material.cpp" />
+    <ClCompile Include="function\render\material\MaterialManager.cpp" />
+    <ClCompile Include="function\render\material\RenderPass.cpp" />
     <ClCompile Include="function\render\RenderPipeline.cpp" />
     <ClCompile Include="function\render\RenderState.cpp" />
     <ClCompile Include="function\render\RenderSystem.cpp" />
@@ -48,6 +51,7 @@
     <ClCompile Include="function\render\rhi\rhi_data_type.cpp" />
     <ClCompile Include="function\scene_management\component\BaseComponent.cpp" />
     <ClCompile Include="function\scene_management\component\CameraComponent.cpp" />
+    <ClCompile Include="function\scene_management\component\MeshFilterComponent.cpp" />
     <ClCompile Include="function\scene_management\component\MeshRenderComponent.cpp" />
     <ClCompile Include="function\scene_management\component\TransformComponent.cpp" />
     <ClCompile Include="function\scene_management\entity\Entity.cpp" />
@@ -55,6 +59,7 @@
     <ClCompile Include="function\scene_management\SceneManageSystem.cpp" />
     <ClCompile Include="function\window\GLWindow.cpp" />
     <ClCompile Include="function\window\Window.cpp" />
+    <ClCompile Include="resource\BuiltinResDict.cpp" />
     <ClCompile Include="resource\mesh\MeshItem.cpp" />
     <ClCompile Include="resource\mesh\MeshManager.cpp" />
     <ClCompile Include="resource\mesh\MeshProductor.cpp" />
@@ -63,6 +68,7 @@
     <ClCompile Include="resource\texture\TextureManager.cpp" />
     <ClCompile Include="runtime\Application.cpp" />
     <ClCompile Include="test\ayy.cpp" />
+    <ClCompile Include="test\windowtest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\data_type.h" />
@@ -84,6 +90,9 @@
     <ClInclude Include="function\imgui\GUISystem.h" />
     <ClInclude Include="function\io\FileReader.h" />
     <ClInclude Include="function\log\Logger.h" />
+    <ClInclude Include="function\render\material\Material.h" />
+    <ClInclude Include="function\render\material\MaterialManager.h" />
+    <ClInclude Include="function\render\material\RenderPass.h" />
     <ClInclude Include="function\render\RenderPipeline.h" />
     <ClInclude Include="function\render\RenderState.h" />
     <ClInclude Include="function\render\RenderSystem.h" />
@@ -94,6 +103,7 @@
     <ClInclude Include="function\render\rhi\rhi_data_type.h" />
     <ClInclude Include="function\scene_management\component\BaseComponent.h" />
     <ClInclude Include="function\scene_management\component\CameraComponent.h" />
+    <ClInclude Include="function\scene_management\component\MeshFilterComponent.h" />
     <ClInclude Include="function\scene_management\component\MeshRenderComponent.h" />
     <ClInclude Include="function\scene_management\component\TransformComponent.h" />
     <ClInclude Include="function\scene_management\entity\Entity.h" />
@@ -101,6 +111,7 @@
     <ClInclude Include="function\scene_management\SceneManageSystem.h" />
     <ClInclude Include="function\window\GLWindow.h" />
     <ClInclude Include="function\window\Window.h" />
+    <ClInclude Include="resource\BuiltinResDict.h" />
     <ClInclude Include="resource\mesh\MeshItem.h" />
     <ClInclude Include="resource\mesh\MeshManager.h" />
     <ClInclude Include="resource\mesh\MeshProductor.h" />

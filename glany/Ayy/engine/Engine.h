@@ -6,14 +6,20 @@
 #include "function/window/Window.h"
 
 NS_AYY_BEGIN
+// Resources
 class MeshManager;
 class ShaderManager;
 class TextureManager;
+
+// Scene & ECS
 class Scene;
 class RenderSystem;
 class GUISystem;
 class SceneManageSystem;
+
+// Function Managers
 class EventManager;
+class MaterialManager;
 
 namespace fancy {
 class Editor;
@@ -40,7 +46,9 @@ public:
 	MeshManager* GetMeshManager() { return _meshManager; }
 	ShaderManager* GetShaderManager() { return _shaderManager; }
 	TextureManager* GetTextureManager() { return _textureManager; }
+
 	EventManager* GetEventManager() { return _eventManager; }
+	MaterialManager* GetMaterialManager() { return _materialManager; }
 
 protected:
 	void TickLogic();
@@ -50,21 +58,24 @@ protected:
 protected:
 	static Engine* s_instance;
 
-	Application* _app			= nullptr;
-	Window*		_window			= nullptr;
-	Scene*		_scene			= nullptr;
-	fancy::Editor* _editor		= nullptr;
+	Application*		_app			= nullptr;
+	Window*				_window			= nullptr;
+	Scene*				_scene			= nullptr;
+	fancy::Editor*		_editor			= nullptr;
 
 protected:
-	RenderSystem* _renderSystem = nullptr;
-	GUISystem* _guiSystem = nullptr;
-	SceneManageSystem* _sceneManageSystem = nullptr;
+	RenderSystem*		_renderSystem		= nullptr;
+	GUISystem*			_guiSystem			= nullptr;
+	SceneManageSystem*	_sceneManageSystem	= nullptr;
 
-	EventManager* _eventManager = nullptr;
 protected:
-	MeshManager* _meshManager = nullptr;
-	ShaderManager* _shaderManager = nullptr;
-	TextureManager* _textureManager = nullptr;
+	EventManager*		_eventManager		= nullptr; 
+	MaterialManager*	_materialManager	= nullptr;
+
+protected:
+	MeshManager*		_meshManager		= nullptr;
+	ShaderManager*		_shaderManager		= nullptr;
+	TextureManager*		_textureManager		= nullptr;
 	
 protected:
 	float	_lastFrameTimeStamp = 0.f;
