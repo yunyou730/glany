@@ -22,6 +22,10 @@
 
 #include "resource/BuiltinResDict.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
+
+
 namespace ayy
 {
 
@@ -33,8 +37,16 @@ void MathTest(float Translate, glm::vec2 const& Rotate)
 	View = glm::rotate(View, Rotate.x, glm::vec3(0.0f, 1.0f, 0.0f));
 	glm::mat4 Model = glm::scale(glm::mat4(1.0f), glm::vec3(0.5f));
 
-
 	Projection * View * Model;
+
+
+	glm::quat q(glm::vec3(10, 20, 30));
+
+	//glm::slerp()
+
+	glm::qua<float> q2();
+
+	
 }
 
 void SpriteTest()
@@ -57,8 +69,14 @@ void SpriteTest()
 	entity->AddComponent<MeshRenderComponent>()->Initialize(BuiltinMaterial::kNormal);
 
 	entity = scene->CreateEntity();
-	entity->AddComponent<CameraComponent>()->Initialize(ECameraProjType::Persp, glm::vec3(0,0,-1), Engine::Instance()->GetWindow()->GetAspectWH());
+	entity->AddComponent<CameraComponent>()->Initialize(ECameraProjType::Persp, Engine::Instance()->GetWindow()->GetAspectWH());
+
 	entity->GetComponent<TransformComponent>()->SetPosition(0, 0, 1);
+
+	//entity->GetComponent<TransformComponent>()->SetRotation(glm::vec3(0, glm::radians(180.f), 0));
+	//entity->GetComponent<TransformComponent>()->SetRotation(glm::vec3(0, 3.14159, 0));
+
+	entity->GetComponent<TransformComponent>()->SetForward(glm::vec3(0,0,-1));
 }
 
 void ModelTest()
@@ -67,4 +85,3 @@ void ModelTest()
 }
 
 }
-

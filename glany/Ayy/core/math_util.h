@@ -4,7 +4,7 @@
 #include "util_func.h"
 
 #include <glm/glm.hpp>
-
+#include <glm/ext/quaternion_common.hpp>
 
 NS_AYY_BEGIN
 void Dump(const glm::mat4& mat);

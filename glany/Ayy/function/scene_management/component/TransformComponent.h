@@ -10,14 +10,16 @@ class TransformComponent : public BaseComponent
 {
 public:
 	static const std::string ClsName() { return CLASS_NAME(ayy::TransformComponent); }
-
-
+	
 public:
 	TransformComponent(Entity* entity);
 
 	void SetPosition(const glm::vec3& pos) { _pos = pos; }
-	void SetRotation(const glm::vec3& rotation) { _rotationEachAxis = rotation; }
 	void SetScale(const glm::vec3& scale) { _scale = scale; }
+
+	void SetRotation(const glm::vec3& rotation);
+	void SetForward(const glm::vec3& forward);
+	glm::vec3 GetForward();
 
 	void SetPosition(float x, float y, float z) { _pos.x = x; _pos.y = y; _pos.z = z; }
 		
@@ -42,17 +44,15 @@ public:
 protected:
 	glm::vec3 _pos;
 	glm::vec3 _scale;
-	glm::vec3 _rotationEachAxis;
-
+	glm::vec3 _rotationEachAxis;	// euler in radians
+	
 	//bool _bMatrixDirty = true;
 	glm::mat4 _translateMatrix;
 	glm::mat4 _rotationMatrix;
 	glm::mat4 _scaleMatrix;
 	glm::mat4 _modelMatrix;
 
-
 	unsigned int _visibilityLayer = 0;
-
 };
 
 

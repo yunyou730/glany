@@ -22,14 +22,12 @@ public:
 public:
 	CameraComponent(Entity* entity);
 
-	void Initialize(ECameraProjType projType,const glm::vec3& lookDir,float aspectWH);
+	void Initialize(ECameraProjType projType,float aspectWH);
 	const glm::mat4& GetProjectionMatrix();
 	const unsigned int GetLayer() const { return _layer; }
 
 
 public:
-	glm::vec3 GetLookDir() { return _lookDir; }
-
 	ECameraProjType GetProjType() const { return _projType; }
 	void SetProjType(ECameraProjType projType) { _projType = projType; }
 
@@ -59,10 +57,8 @@ protected:
 	void UpdateOrthoScope();
 
 protected:
-	glm::vec3	_lookDir;
 	ECameraProjType	_projType = ECameraProjType::Persp;
-
-	//glm::mat4	_viewMatrix;
+	
 	glm::mat4	_projMatrix;
 	
 	unsigned int _layer = 0;

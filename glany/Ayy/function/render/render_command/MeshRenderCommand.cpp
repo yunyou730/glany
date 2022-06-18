@@ -71,7 +71,9 @@ void MeshRenderCommand::RenderOnePass(MeshItem* meshItem, RenderPass* pass)
 glm::mat4 MeshRenderCommand::CalcViewMatrix()
 {
 	auto cameraTransform = _camera->GetEntity()->GetComponent<TransformComponent>();
-	glm::vec3 lookCenter = cameraTransform->GetPosition() + glm::normalize(_camera->GetLookDir());
+
+	//glm::vec3 lookCenter = cameraTransform->GetPosition() + glm::normalize(_camera->GetLookDir());
+	glm::vec3 lookCenter = cameraTransform->GetPosition() + glm::normalize(cameraTransform->GetForward());
 	glm::mat4 viewMatrix = glm::lookAt(cameraTransform->GetPosition(), lookCenter, kUp);
 	return viewMatrix;
 }

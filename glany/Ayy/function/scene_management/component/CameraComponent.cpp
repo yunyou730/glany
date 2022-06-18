@@ -12,14 +12,12 @@ NS_AYY_BEGIN
 CameraComponent::CameraComponent(Entity* entity)
 	:BaseComponent(entity)
 {
-	_lookDir = glm::vec3(0,0,-1);
 	_projMatrix = glm::mat4(1.0);
 }
 
-void CameraComponent::Initialize(ECameraProjType projType, const glm::vec3& lookDir,float aspectWH)
+void CameraComponent::Initialize(ECameraProjType projType,float aspectWH)
 {
 	_projType = projType;
-	_lookDir = lookDir;
 	SetAspectWH(aspectWH);
 }
 

@@ -20,6 +20,9 @@ protected:
 	glm::vec3	_pos;
 	glm::vec3	_rot;
 	glm::vec3	_scale;
+
+
+	glm::vec3	_forward;
 };
 
 NS_AYY_EDITOR_END

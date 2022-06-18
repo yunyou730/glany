@@ -9,7 +9,7 @@
 static const float kPosMin = -1.0f;
 static const float kPosMax = 1.0f;
 
-static const float kRotMin = 0.0f;
+static const float kRotMin = -3.1415;
 static const float kRotMax = 3.1415;
 
 static const float kScaleMin = -3.0f;
