@@ -41,6 +41,9 @@ namespace ayy
 			return _size;
 		}
 
+		int GetWidth() const { return _size.x; }
+		int GetHeight() const { return _size.y; }
+
 		float GetAspectWH() const {
 			return float(_size.x) / float(_size.y);
 		}

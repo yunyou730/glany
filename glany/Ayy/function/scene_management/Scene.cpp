@@ -83,13 +83,15 @@ Entity* Scene::GetEntity(EntityID entityId)
 void Scene::OnWindowSizeChanged(Event* eventItem)
 {
 	WindowSizeChangedEvent* sizeChangedEvt = dynamic_cast<WindowSizeChangedEvent*>(eventItem);
+	
+
 
 	std::vector<Entity*> entities = QueryEntity<CameraComponent>();
 	for (auto it = entities.begin();it != entities.end();it++)
 	{
 		Entity* entity = *it;
 		CameraComponent* camera = entity->GetComponent<CameraComponent>();
-		camera->SetAspectWH(Engine::Instance()->GetWindow()->GetAspectWH());
+		camera->SetAspectWH(sizeChangedEvt->_width, sizeChangedEvt->_height);
 	}
 }
 

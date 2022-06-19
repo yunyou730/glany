@@ -22,7 +22,7 @@ public:
 public:
 	CameraComponent(Entity* entity);
 
-	void Initialize(ECameraProjType projType,float aspectWH);
+	void Initialize(ECameraProjType projType,float viewportWidth,float viewportHeight);
 	const glm::mat4& GetProjectionMatrix();
 	const unsigned int GetLayer() const { return _layer; }
 
@@ -50,7 +50,7 @@ public:
 		_zFar = zFar;
 	}
 	
-	void SetAspectWH(float aspectWH);
+	void SetAspectWH(float viewportWidth, float viewportHeight);
 
 protected:
 	void CalcProjectionMatrix();

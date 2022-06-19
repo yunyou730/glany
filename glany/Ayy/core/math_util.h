@@ -21,6 +21,12 @@ void Dump(const VectorType& vec)
 	printf("\n-------------\n");
 }
 
+template<typename T>
+bool CheckZero(T num)
+{
+	return glm::abs(num) <= glm::epsilon<T>();
+}
+
 NS_AYY_END
 
 

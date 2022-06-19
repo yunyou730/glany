@@ -76,11 +76,12 @@ void SpriteTest()
 	//Texture2D* texture = Engine::Instance()->GetTextureManager()->CreateTexture2D("builtin_assets/textures/container.jpg");
 	
 	auto scene = Engine::Instance()->GetScene();
+	auto window = Engine::Instance()->GetWindow();
 
 	// Camera
 	{
 		auto entity = scene->CreateEntity();
-		entity->AddComponent<CameraComponent>()->Initialize(ECameraProjType::Persp, Engine::Instance()->GetWindow()->GetAspectWH());
+		entity->AddComponent<CameraComponent>()->Initialize(ECameraProjType::Persp, window->GetWidth(), window->GetHeight());
 
 		entity->GetComponent<TransformComponent>()->SetPosition(0, 0, 1);
 		entity->GetComponent<TransformComponent>()->SetForward(glm::vec3(0, 0, -1));

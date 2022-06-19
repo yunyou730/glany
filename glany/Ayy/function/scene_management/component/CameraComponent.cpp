@@ -7,6 +7,8 @@
 #include <glm/ext/matrix_clip_space.hpp> // glm::perspective
 #include <glm/ext/scalar_constants.hpp> // glm::pi
 
+#include "core/math_util.h"
+
 NS_AYY_BEGIN
 
 CameraComponent::CameraComponent(Entity* entity)
@@ -15,16 +17,19 @@ CameraComponent::CameraComponent(Entity* entity)
 	_projMatrix = glm::mat4(1.0);
 }
 
-void CameraComponent::Initialize(ECameraProjType projType,float aspectWH)
+void CameraComponent::Initialize(ECameraProjType projType,float viewportWidth,float viewportHeight)
 {
 	_projType = projType;
-	SetAspectWH(aspectWH);
+	SetAspectWH(viewportWidth, viewportHeight);
 }
 
-void CameraComponent::SetAspectWH(float aspectWH)
+void CameraComponent::SetAspectWH(float viewportWidth,float viewportHeight)
 {
-	_aspectWH = aspectWH;
-	UpdateOrthoScope();
+	if (!CheckZero(viewportHeight))
+	{
+		_aspectWH = viewportWidth / viewportHeight;
+		UpdateOrthoScope();
+	}
 }
 
 void CameraComponent::UpdateOrthoScope()
