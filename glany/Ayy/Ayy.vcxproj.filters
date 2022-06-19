@@ -228,6 +228,12 @@
     <ClInclude Include="resource\BuiltinResDict.h">
       <Filter>resource</Filter>
     </ClInclude>
+    <ClInclude Include="resource\texture\RawImage.h">
+      <Filter>resource\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\texture\Texture2D.h">
+      <Filter>resource\texture</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\ayy.cpp">
@@ -379,6 +385,12 @@
     </ClCompile>
     <ClCompile Include="resource\BuiltinResDict.cpp">
       <Filter>resource</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\texture\RawImage.cpp">
+      <Filter>resource\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="resource\texture\Texture2D.cpp">
+      <Filter>resource\texture</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

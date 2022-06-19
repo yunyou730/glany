@@ -34,6 +34,7 @@ void ShaderManager::Deinitialize()
 void ShaderManager::CreateBuiltinShaders()
 {
 	_cache.insert(std::make_pair(BuiltinProgram::kTest1, CreateShader("./builtin_assets/shaders/test1.vs", "./builtin_assets/shaders/test1.fs")));
+	_cache.insert(std::make_pair(BuiltinProgram::kPosUV, CreateShader("./builtin_assets/shaders/pos_uv.vs", "./builtin_assets/shaders/pos_uv.fs")));
 }
 
 ShaderProgram* ShaderManager::GetShader(const std::string& key)

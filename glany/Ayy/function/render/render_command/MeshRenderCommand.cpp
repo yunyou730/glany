@@ -18,12 +18,18 @@
 #include "function/render/material/RenderPass.h"
 #include "function/render/material/MaterialManager.h"
 
+#include "resource/texture/TextureManager.h"
+#include "resource/texture/Texture2D.h"
+
 #include <glm/vec3.hpp> // glm::vec3
 #include <glm/vec4.hpp> // glm::vec4
 #include <glm/mat4x4.hpp> // glm::mat4
 #include <glm/ext/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale
 #include <glm/ext/matrix_clip_space.hpp> // glm::perspective
 #include <glm/ext/scalar_constants.hpp> // glm::pi
+
+
+#include <glad/glad.h>
 
 static const glm::vec3 kUp = glm::vec3(0, 1, 0);
 
@@ -55,13 +61,32 @@ void MeshRenderCommand::RenderOnePass(MeshItem* meshItem, RenderPass* pass)
 	ShaderProgram* shaderProgram = Engine::Instance()->GetShaderManager()->GetShader(pass->GetProgramKey());
 
 	shaderProgram->Use();
+
+	// handle matrix
 	shaderProgram->SetUniformMatrix4x4("u_Model", _transform->ModelMatrix());
 	shaderProgram->SetUniformMatrix4x4("u_Translation", _transform->TranslateMatrix());
 	shaderProgram->SetUniformMatrix4x4("u_Rotation", _transform->RotationMatrix());
 	shaderProgram->SetUniformMatrix4x4("u_Scale", _transform->ScaleMatrix());
 	shaderProgram->SetUniformMatrix4x4("u_View", CalcViewMatrix());
 	shaderProgram->SetUniformMatrix4x4("u_Projection", _camera->GetProjectionMatrix());
+	
+	// handle textures
+	std::vector<RenderPass::TextureData> textureDatas = pass->GetRefTextures();
+	for (int i = 0;i < textureDatas.size();i++)
+	{
+		RenderPass::TextureData textureData = textureDatas[i];
 
+		Texture2D* texture = Engine::Instance()->GetTextureManager()->GetTexture2D(textureData._textureId);
+		std::string uniformName = textureData._uniformName;
+		
+		glActiveTexture(GL_TEXTURE0 + i);
+		glBindTexture(GL_TEXTURE_2D,texture->GetGLTextureID());
+
+		// set uniform
+		glUniform1i(glGetUniformLocation(shaderProgram->GetHandle(), uniformName.c_str()), i); // ÊÖ¶¯ÉèÖÃ
+	}
+
+	// submit drawcall
 	meshItem->Bind();
 	meshItem->DrawCall();
 	meshItem->UnBind();

@@ -21,6 +21,7 @@ void Testbed::OnStart()
 {
 	ayy::Logger::Info("Testbed::OnStart()");
 	
+	ayy::TextureTest();
 	ayy::MathTest(2,glm::vec2());
 	ayy::SpriteTest();
 }

@@ -65,6 +65,8 @@
     <ClCompile Include="resource\mesh\MeshProductor.cpp" />
     <ClCompile Include="resource\shader\ShaderManager.cpp" />
     <ClCompile Include="resource\shader\ShaderProgram.cpp" />
+    <ClCompile Include="resource\texture\RawImage.cpp" />
+    <ClCompile Include="resource\texture\Texture2D.cpp" />
     <ClCompile Include="resource\texture\TextureManager.cpp" />
     <ClCompile Include="runtime\Application.cpp" />
     <ClCompile Include="test\ayy.cpp" />
@@ -117,6 +119,8 @@
     <ClInclude Include="resource\mesh\MeshProductor.h" />
     <ClInclude Include="resource\shader\ShaderManager.h" />
     <ClInclude Include="resource\shader\ShaderProgram.h" />
+    <ClInclude Include="resource\texture\RawImage.h" />
+    <ClInclude Include="resource\texture\Texture2D.h" />
     <ClInclude Include="resource\texture\TextureManager.h" />
     <ClInclude Include="runtime\Application.h" />
     <ClInclude Include="runtime\ayy.h" />
@@ -231,7 +235,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\imgui\backends\;$(SolutionDir)ThirdParty\imgui\;$(SolutionDir)ThirdParty\glm-0.9.9.8;$(SolutionDir)ThirdParty\glad-gl4.6\include;$(SolutionDir)ThirdParty\glfw-3.3.7\include\;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\imgui\backends\;$(SolutionDir)ThirdParty\imgui\;$(SolutionDir)ThirdParty\glm-0.9.9.8\;$(SolutionDir)ThirdParty\glad-gl4.6\include\;$(SolutionDir)ThirdParty\stb_image\;$(SolutionDir)ThirdParty\glfw-3.3.7\include\;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalModuleDependencies>%(AdditionalModuleDependencies)</AdditionalModuleDependencies>
     </ClCompile>
     <Link>
@@ -250,7 +254,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\imgui\backends\;$(SolutionDir)ThirdParty\imgui\;$(SolutionDir)ThirdParty\glm-0.9.9.8;$(SolutionDir)ThirdParty\glad-gl4.6\include;$(SolutionDir)ThirdParty\glfw-3.3.7\include\;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\imgui\backends\;$(SolutionDir)ThirdParty\imgui\;$(SolutionDir)ThirdParty\glm-0.9.9.8\;$(SolutionDir)ThirdParty\glad-gl4.6\include\;$(SolutionDir)ThirdParty\stb_image\;$(SolutionDir)ThirdParty\glfw-3.3.7\include\;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalModuleDependencies>%(AdditionalModuleDependencies)</AdditionalModuleDependencies>
     </ClCompile>
     <Link>

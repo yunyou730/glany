@@ -13,6 +13,8 @@ class MeshProductor
 {
 public:
 	static MeshItem* CreateQuad();
+	static MeshItem* CreateQuadUV();
+
 	static MeshItem* CreateCube();
 	static MeshItem* CreateFromFile(const std::string& path);
 };

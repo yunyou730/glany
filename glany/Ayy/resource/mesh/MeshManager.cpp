@@ -50,6 +50,7 @@ MeshItem* MeshManager::GetFromCache(const std::string& key)
 void MeshManager::LoadBuiltin()
 {
 	AddCache(BuiltinMesh::kQuad, MeshProductor::CreateQuad());
+	AddCache(BuiltinMesh::kQuadUV, MeshProductor::CreateQuadUV());
 }
 
 

@@ -62,10 +62,28 @@ Material* MaterialManager::GetMaterial(const std::string& key)
 
 void MaterialManager::InitBuiltin()
 {
-	Material* material = new Material();
-	material->Initialize();
-	material->AddPass(new RenderPass(BuiltinProgram::kTest1));
-	RegisterMaterial(BuiltinMaterial::kNormal, material);
+	// test1
+	{
+		Material* material = new Material();
+		material->Initialize();
+		material->AddPass(new RenderPass(BuiltinProgram::kTest1));
+		RegisterMaterial(BuiltinMaterial::kNormal, material);
+	}
+	
+
+	// pos uv
+	{
+		Material* material = new Material();
+		material->Initialize();
+
+		RenderPass* pass = new RenderPass(BuiltinProgram::kPosUV);
+		pass->AddRefTextures(RenderPass::TextureData("u_Texture1", 2));
+		pass->AddRefTextures(RenderPass::TextureData("u_Texture2", 3));
+
+		material->AddPass(pass);
+		RegisterMaterial(BuiltinMaterial::kPosUV, material);
+	}
+	
 }
 
 NS_AYY_END
