@@ -22,6 +22,9 @@ public:
 	Texture2D* CreateTexture2D(const std::string& imagePath);
 	Texture2D* GetTexture2D(unsigned int textureId);
 
+	const std::map<std::string, RawImage*>& GetRawCache() { return _rawMap; }
+	const std::map<unsigned int, Texture2D*>& GetTex2DCache() { return _tex2DMap; }
+
 protected:
 	bool IsRawImageInCache(const std::string& imagePath);
 

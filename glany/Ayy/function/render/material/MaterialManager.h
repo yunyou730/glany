@@ -21,6 +21,7 @@ public:
 	void UnRegisterMaterial(const std::string& key);
 
 	Material* GetMaterial(const std::string& key);
+	const std::map<std::string, Material*>& GetAll() const { return _materials; }
 
 protected:
 	void InitBuiltin();

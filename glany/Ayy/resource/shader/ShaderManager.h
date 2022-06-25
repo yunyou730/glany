@@ -21,6 +21,8 @@ public:
 
 	ShaderProgram* GetShader(const std::string& key);
 
+	const std::map<std::string, ShaderProgram*>& GetCache() const { return _cache; }
+
 protected:
 	void CreateBuiltinShaders();
 	ShaderProgram* CreateShader(const std::string& vsPath,const std::string& fsPath);

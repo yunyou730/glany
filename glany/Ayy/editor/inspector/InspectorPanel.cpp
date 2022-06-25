@@ -12,6 +12,8 @@
 
 #include "editor/inspector/TransformInspector.h"
 #include "editor/inspector/CameraInspector.h"
+#include "editor/inspector/MeshFilterInspector.h"
+#include "editor/inspector/MeshRenderInspector.h"
 
 NS_AYY_EDITOR_BEGIN
 
@@ -22,6 +24,8 @@ void InspectorPanel::OnStart()
 
 	_inspectors.push_back(new TransformInspector());
 	_inspectors.push_back(new CameraInspector());
+	_inspectors.push_back(new MeshFilterInspector());
+	_inspectors.push_back(new MeshRenderInspector());
 }
 
 void InspectorPanel::OnDestroy()

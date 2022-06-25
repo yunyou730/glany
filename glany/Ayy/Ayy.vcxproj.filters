@@ -79,6 +79,9 @@
     <Filter Include="function\render\material">
       <UniqueIdentifier>{8a45e12a-f91c-48d7-8e15-b294e66c81f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="editor\asset">
+      <UniqueIdentifier>{640eec8d-364e-4d01-bac8-cfe985238fd8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\data_type.h">
@@ -233,6 +236,15 @@
     </ClInclude>
     <ClInclude Include="resource\texture\Texture2D.h">
       <Filter>resource\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\inspector\MeshFilterInspector.h">
+      <Filter>editor\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\inspector\MeshRenderInspector.h">
+      <Filter>editor\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="editor\asset\AssetPanel.h">
+      <Filter>editor\asset</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -391,6 +403,15 @@
     </ClCompile>
     <ClCompile Include="resource\texture\Texture2D.cpp">
       <Filter>resource\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\inspector\MeshFilterInspector.cpp">
+      <Filter>editor\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\inspector\MeshRenderInspector.cpp">
+      <Filter>editor\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\asset\AssetPanel.cpp">
+      <Filter>editor\asset</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

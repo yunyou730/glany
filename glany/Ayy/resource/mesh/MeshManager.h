@@ -21,6 +21,7 @@ public:
 	void RemoveCache(const std::string& key);
 
 	MeshItem* GetFromCache(const std::string& key);
+	const std::map<std::string, MeshItem*>& GetCache() const { return _cache; }
 
 protected:
 	void LoadBuiltin();

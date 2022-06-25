@@ -22,6 +22,7 @@
     <ClCompile Include="core\data_type.cpp" />
     <ClCompile Include="core\math_util.cpp" />
     <ClCompile Include="core\util_func.cpp" />
+    <ClCompile Include="editor\asset\AssetPanel.cpp" />
     <ClCompile Include="editor\Editor.cpp" />
     <ClCompile Include="editor\EditorEvent.cpp" />
     <ClCompile Include="editor\EditorUtil.cpp" />
@@ -29,6 +30,8 @@
     <ClCompile Include="editor\inspector\CameraInspector.cpp" />
     <ClCompile Include="editor\inspector\ComponentInspector.cpp" />
     <ClCompile Include="editor\inspector\InspectorPanel.cpp" />
+    <ClCompile Include="editor\inspector\MeshFilterInspector.cpp" />
+    <ClCompile Include="editor\inspector\MeshRenderInspector.cpp" />
     <ClCompile Include="editor\inspector\TransformInspector.cpp" />
     <ClCompile Include="editor\Panel.cpp" />
     <ClCompile Include="engine\Engine.cpp" />
@@ -76,6 +79,7 @@
     <ClInclude Include="core\data_type.h" />
     <ClInclude Include="core\math_util.h" />
     <ClInclude Include="core\util_func.h" />
+    <ClInclude Include="editor\asset\AssetPanel.h" />
     <ClInclude Include="editor\Editor.h" />
     <ClInclude Include="editor\EditorEvent.h" />
     <ClInclude Include="editor\EditorUtil.h" />
@@ -83,6 +87,8 @@
     <ClInclude Include="editor\inspector\CameraInspector.h" />
     <ClInclude Include="editor\inspector\ComponentInspector.h" />
     <ClInclude Include="editor\inspector\InspectorPanel.h" />
+    <ClInclude Include="editor\inspector\MeshFilterInspector.h" />
+    <ClInclude Include="editor\inspector\MeshRenderInspector.h" />
     <ClInclude Include="editor\inspector\TransformInspector.h" />
     <ClInclude Include="editor\Panel.h" />
     <ClInclude Include="engine\Engine.h" />
